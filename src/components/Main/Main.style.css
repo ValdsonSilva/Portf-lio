@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+
+#sobre_mim {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 280px;
+    padding-inline: 12px;
+}
+
+#sobre_mim div {
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* line-height: 100px; */
+    width: 55%;
+    height: 300px;
+    gap: 25px;
+}
+
+#sobre_mim h1 {
+    /* font-family: 'Righteous', cursive; */
+    font-size: 88px;
+    font-weight: 900;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #ffff;
+}
+
+#sobre_mim h2 {
+    /* font-family: 'Righteous', cursive; */
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgb(25, 226, 241);
+    animation: glowing 2s infinite; 
+}
+
+@keyframes glowing {
+    0%{
+        color: rgb(25, 226, 241);
+        text-shadow: 0 0 5px  rgb(25, 226, 241);
+    }
+    50% {
+        color:  rgb(87, 237, 248);
+        text-shadow: 0 0 20px  rgb(87, 237, 248);
+    }
+    100% {
+        color:  rgb(25, 226, 241);
+        text-shadow: 0 0 5px rgb(25, 226, 241);
+    }
+}
+
+#sobre_mim div .texto {
+    line-height: 20px;
+    text-align: justify;
+    /* text-indent: 10px; */
+
+    /* background-color: black; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#sobre_mim div .texto p {
+    /* font-family:'Righteous', cursive; */
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 0em;
+    text-align: start;
+    color: #FFF2E7;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 26px;
+}
+
+#sobre_mim div nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    gap: 7px;
+}
+
+#sobre_mim div nav a {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: none;
+}
+
+#sobre_mim figure {
+    /* background-color: coral; */
+    width: 45%;
+}
+
+.foto {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+}
+
+/* --------TECNOLOGIAS---------- */
+
+#tecnologias {
+    margin-top: 280px;
+    display: grid;
+    place-content: center;
+}
+
+#tecnologias div {
+    background: black;
+    margin-top: 10px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tecnologias h1, p {
+    color: rgb(25, 226, 241);
+}

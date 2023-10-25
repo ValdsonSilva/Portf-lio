@@ -9,12 +9,12 @@ function Header() {
         <h1>Desenvolvedor</h1>
 
         <nav className='navegacao'>
-            <li><a href="/">Sobre mim</a></li>
-            <li><a href="/">Tecnologias</a></li>
-            <li><a href="/">Projetos</a></li>
+            <li><a href="#sobre_mim">Sobre mim</a></li>
+            <li><a href="#tecnologias">Tecnologias</a></li>
+            <li><a href="#projetos">Projetos</a></li>
         </nav>
 
-        <button>light/dark</button>
+        <button onClick={""}>light/dark</button>
 
     </header>
   )

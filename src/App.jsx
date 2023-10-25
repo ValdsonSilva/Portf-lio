@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './components/Header'
-import Main from './components/Main'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,10 +12,10 @@ function App() {
     <div>
         {/* cabeçalho */}
         <Header/>
-        
+        {/* conteudo principal */}
         <Main/>
 
-        <h1>Portfólio do Valdson</h1>
+        <footer></footer>
     </div>
   )
 }

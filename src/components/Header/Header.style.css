@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 .cabecalho {
+    top: 0;
+    padding: 10px 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -10,6 +12,7 @@
     height: 100px;
     color: blue;
     border-bottom: 3px solid rgb(25, 226, 241);
+    position: fixed;
 }
 
 .cabecalho h1 {
