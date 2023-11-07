@@ -1,13 +1,36 @@
 @charset "utf-8";
 
+/* global */
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+}
+
+.main {
+    background-color: rgb(0, 0, 0);
+}
+
+.light {
+    background-color: rgb(224, 221, 221);
+}
+
+.dark {
+    color: #efefef;
+}
+
 
 #sobre_mim {
     /* background-color: blue; */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 280px;
-    padding-inline: 12px;
+    /* padding: 280px;
+    padding-inline: 12px; */
+    /* min-height: 100vh; */
 }
 
 #sobre_mim div {
@@ -28,7 +51,8 @@
     font-weight: 900;
     letter-spacing: 0em;
     text-align: left;
-    color: #ffff;
+    color: #ffffffe8;
+    text-shadow: 1px 1px 50px #000;
 }
 
 #sobre_mim h2 {
@@ -37,6 +61,7 @@
     font-weight: 900;
     letter-spacing: 0em;
     text-align: left;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
     color: rgb(25, 226, 241);
     animation: glowing 2s infinite; 
 }
@@ -75,7 +100,8 @@
     font-weight: 900;
     letter-spacing: 0em;
     text-align: start;
-    color: #FFF2E7;
+    color: #ffffffe8;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
     max-width: 600px;
     margin: 0 auto;
     line-height: 26px;
@@ -110,13 +136,21 @@
 /* --------TECNOLOGIAS---------- */
 
 #tecnologias {
-    margin-top: 280px;
-    display: grid;
-    place-content: center;
+    /* margin-top: 280px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#tecnologias div {
-    background: black;
+.carts_father{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#tecnologias .carts_child {
+    background: rgb(141, 7, 148);
     margin-top: 10px;
     width: 500px;
     height: 500px;
@@ -127,5 +161,34 @@
 }
 
 #tecnologias h1, p {
+    color: rgb(25, 226, 241);
+}
+
+/* --------PROJETOS---------- */
+
+#projetos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carts_projects_father {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#projetos .carts_projects_child {
+    background: rgb(113, 118, 117);
+    margin-top: 10px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projetos h1, p {
     color: rgb(25, 226, 241);
 }

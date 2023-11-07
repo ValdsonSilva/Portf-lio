@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import "./Header.style.css"
-// nosso cabeçalho
+import {FaSun, FaMoon} from "react-icons/fa"
+import { ThemeContext } from '../context/LinghtDarkContext'
 
+// nosso cabeçalho
 function Header() {
+  
+  // trazendo o nosso contexto para esse componente
+  const {theme, handleTheme} = useContext(ThemeContext)
 
   return (
     <header className='cabecalho'>
@@ -14,7 +19,9 @@ function Header() {
             <li><a href="#projetos">Projetos</a></li>
         </nav>
 
-        <button onClick={""}>light/dark</button>
+        <button onClick={handleTheme}>
+          {theme ? <FaMoon size={25}/> : <FaSun size={25}/>}
+        </button>
 
     </header>
   )
