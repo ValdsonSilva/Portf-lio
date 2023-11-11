@@ -149,19 +149,53 @@ section {
     gap: 10px;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 #tecnologias .carts_child {
-    background: rgb(141, 7, 148);
+    animation: expandAndContract 3s infinite;
+    transform-origin: center;
+    background-color: white;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(50px);
+    box-shadow: 5px 2px 20px black;
+    z-index: 1;
     margin-top: 10px;
-    width: 500px;
-    height: 500px;
+    width: 420px;
+    height: 420px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 3 ease-in-out;
+}
+
+#tecnologias .carts_child:hover {
+    background-color:rgb(25, 226, 241);
+    transform: scale(1.1);
+    z-index: 2;
 }
 
 #tecnologias h1, p {
     color: rgb(25, 226, 241);
+}
+
+#tecnologias h1 {
+    font-size: x-large;
+    font-weight: 800;
+    font-size: 60px;
+    margin-bottom: 50px;
+    text-shadow: 8px 1px 10px #000;
 }
 
 /* --------PROJETOS---------- */
@@ -189,6 +223,23 @@ section {
     align-items: center;
 }
 
-#projetos h1, p {
+#projetos h1, h2, p {
     color: rgb(25, 226, 241);
+}
+
+#projetos h1 {
+    font-size: x-large;
+    font-weight: 800;
+    font-size: 60px;
+    margin-bottom: 50px;
+    text-shadow: 8px 1px 10px #000;
+}
+
+/* --------------- reponsividade --------------- */
+
+/* tablet - (<= 628px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    main {
+        margin-top: 100px;
+    }
 }

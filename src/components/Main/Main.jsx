@@ -2,8 +2,9 @@ import "./Main.style.css"
 import foto from "../../assets/foto.jpeg"
 import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython} from 'react-icons/fa';
 import {MdEmail, MdJavascript} from "react-icons/md"
+import django from "../../assets/Django-icon.svg"
 import { ThemeContext } from "../context/LinghtDarkContext";
-import { useContext } from "react";
+import { useContext} from "react";
 
 function Main() {
     // retorno da API do github
@@ -25,27 +26,31 @@ function Main() {
     const tecnologias = [
         {
             stack : "React.js",
-            image : <FaReact size={300}/>
+            image : <FaReact size={300} aria-label="Logo do react.js"/>
         }, 
         {
             stack : 'Javascript',
-            image : <MdJavascript size={300}/>
+            image : <MdJavascript size={300} aria-label="Logo do Javascript"/>
         },
         {
             stack : 'Django',
-            image : ''
+            image : <img src={django} 
+                         alt="logo do django" 
+                         width={150} 
+                         height={150}
+                    />
         },
         {
             stack : 'Python',
-            image : <FaPython size={300}/>
+            image : <FaPython size={300} aria-label="Logo do Python"/>
         },
         {
             stack : 'HTML',
-            image : <FaHtml5 size={300}/>
+            image : <FaHtml5 size={300} aria-label="Logo do html"/>
         },
         {
             stack : 'CSS',
-            image : <FaCss3 size={300}/>
+            image : <FaCss3 size={300} aria-label="Logo do css"/>
         }
     ]
 
@@ -118,7 +123,6 @@ function Main() {
         }, 1000 / 60); // 60 fps
     };
 
-
     return (
         
         <main className={`main ${theme ? 'light' : ''}`}>
@@ -178,7 +182,7 @@ function Main() {
                 <div className="carts_projects_father">
                     {repositorios.map((repo) => (
                         <div key={repo.id} className="carts_projects_child">
-                            <h1 key={repo.id}>{repo.nome}</h1>
+                            <h2 key={repo.id}>{repo.nome}</h2>
                             <p key={repo.id}>{repo.imagem}</p>
                         </div>
                     ))}
