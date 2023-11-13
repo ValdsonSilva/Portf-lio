@@ -36,8 +36,8 @@ function Main() {
             stack : 'Django',
             image : <img src={django} 
                          alt="logo do django" 
-                         width={150} 
-                         height={150}
+                         width={220} 
+                         height={220}
                     />
         },
         {
@@ -133,8 +133,9 @@ function Main() {
                         <h2>Desenvolvedor React.js</h2>
                         <div className="texto">
                             <p className={`p ${theme ? 'dark' : ''}`}>
-                            Olá, meu nome é Valdson Silva, sou desenvolvedor Front-end
-                            e adoro criar coisas para a web
+                            Olá, meu nome é Valdson Silva, 
+                            sou desenvolvedor Front-end
+                            e adoro criar coisas para a web.
                             </p>
                         </div>
 
@@ -142,20 +143,23 @@ function Main() {
                         <nav>
                             <li>
                                 <a href="https://www.linkedin.com/in/valdson-mac%C3%AAdo-35981426b/">
-                                    <FaLinkedin size={50}/>
+                                    <FaLinkedin size={50} aria-label="ícone do linkedin"/>
                                 </a>
+                                <p>Linkedin</p>
                             </li>
 
                             <li>
                                 <a href="https://github.com/ValdsonSilva">
-                                    <FaGithub size={50}/>
+                                    <FaGithub size={50} aria-label="ícone do github"/>
                                 </a>
+                                <p>Github</p>
                             </li>
                             
                             <li>
                                 <a href="https://is.gd/ySE8mH">
-                                    <MdEmail size={50}/>
+                                    <MdEmail size={50} aria-label="ícone do email"/>
                                 </a>
+                                <p>Email</p>
                             </li>
                         </nav>
                     </div>
@@ -170,8 +174,8 @@ function Main() {
                 <div className="carts_father">
                     {tecnologias.map((tech) => (
                         <div key={tech.id} className="carts_child">
-                            {/* <h1 key={tech.id}>{tech.stack}</h1> */}
                             {tech.image}
+                            <h1 key={tech.id}>{tech.stack}</h1>
                         </div>
                     ))}
                 </div>

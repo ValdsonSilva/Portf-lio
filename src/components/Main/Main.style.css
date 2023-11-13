@@ -4,14 +4,17 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 section {
     min-height: 100vh;
+    width: 100%;
 }
 
 .main {
     background-color: rgb(0, 0, 0);
+    width: 100%;
 }
 
 .light {
@@ -47,7 +50,8 @@ section {
 
 #sobre_mim h1 {
     /* font-family: 'Righteous', cursive; */
-    font-size: 88px;
+    /* font-size: 88px; */
+    font-size: clamp(88px, 4vw, 16px);
     font-weight: 900;
     letter-spacing: 0em;
     text-align: left;
@@ -57,7 +61,8 @@ section {
 
 #sobre_mim h2 {
     /* font-family: 'Righteous', cursive; */
-    font-size: 56px;
+    /* font-size: 56px; */
+    font-size: clamp(56px, 4vw, 24px);
     font-weight: 900;
     letter-spacing: 0em;
     text-align: left;
@@ -115,6 +120,20 @@ section {
     gap: 7px;
 }
 
+#sobre_mim div nav li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #efefef; */
+    height: 70px;
+}
+
+#sobre_mim div nav li p {
+    color: #efefef;
+    display: none;
+}
+
 #sobre_mim div nav a {
     width: 80px;
     height: 80px;
@@ -142,7 +161,7 @@ section {
     align-items: center;
 }
 
-.carts_father{
+.carts_father {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -184,6 +203,11 @@ section {
     background-color:rgb(25, 226, 241);
     transform: scale(1.1);
     z-index: 2;
+}
+
+#tecnologias .carts_child h1 {
+    color: #000;
+    text-shadow: none;
 }
 
 #tecnologias h1, p {
@@ -238,8 +262,394 @@ section {
 /* --------------- reponsividade --------------- */
 
 /* tablet - (<= 628px) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    main {
-        margin-top: 100px;
+@media only screen and (min-width: 600px) and (max-width: 1358px) {
+
+    #sobre_mim {
+        padding-top: 300px;
+        padding-bottom: 50px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 170px;
+        /* background-color: rgb(109, 7, 7); */
+
     }
+    
+    #sobre_mim h1 {
+        font-size: 70px;
+        text-align:center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim h2 {
+        font-size: 40px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim div .texto p {
+        white-space: pre-line;
+
+        font-size: 18px;
+        text-align: center;
+
+    }
+
+    #sobre_mim div {
+        /* background-color: blue; */
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    /* #sobre_mim div nav {
+        background-color: aquamarine;
+    } */
+
+    #sobre_mim div nav li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sobre_mim div nav a {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: none;
+    }
+
+    .foto {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+    }
+
+    #tecnologias {
+        padding-top: 300px;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: hotpink; */
+    }
+
+    .carts_father, .carts_projects_father {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(3, 1fr); */
+
+        gap: 10px;
+        /* background-color: blue; */
+    }
+
+    #projetos {
+        padding-top: 300px;
+        padding-bottom: 30px;
+    }
+
+    
+    #tecnologias .carts_child, #projetos .carts_projects_child {
+        width: 360px;
+        height: 360px;
+    }
+
+    #tecnologias h1, #projetos h1 {
+        font-size: x-large;
+        font-weight: 800;
+        font-size: 50px;
+        margin-bottom: 50px;
+        text-shadow: 8px 1px 10px #000;
+    }
+}
+
+/* 1358px - tablet */
+@media only screen and (min-width: 769px) and (max-width: 1358px) {
+
+    #sobre_mim {
+        padding-top: 300px;
+        padding-bottom: 50px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 170px;
+        /* background-color: rgb(109, 7, 7); */
+
+    }
+    
+    #sobre_mim h1 {
+        font-size: 70px;
+        text-align:center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim h2 {
+        font-size: 40px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim div .texto p {
+        white-space: pre-line;
+
+        font-size: 18px;
+        text-align: center;
+
+    }
+
+    #sobre_mim div {
+        /* background-color: blue; */
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    /* #sobre_mim div nav {
+        background-color: aquamarine;
+    } */
+
+    #sobre_mim div nav li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sobre_mim div nav a {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: none;
+    }
+
+    .foto {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+    }
+
+    #tecnologias {
+        padding-top: 300px;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: hotpink; */
+    }
+
+    .carts_father, .carts_projects_father {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(3, 1fr); */
+
+        gap: 10px;
+        /* background-color: blue; */
+    }
+
+    #projetos {
+        padding-top: 300px;
+        padding-bottom: 30px;
+    }
+
+    
+    #tecnologias .carts_child, #projetos .carts_projects_child {
+        width: 360px;
+        height: 360px;
+    }
+
+    #tecnologias h1, #projetos h1 {
+        font-size: x-large;
+        font-weight: 800;
+        font-size: 50px;
+        margin-bottom: 50px;
+        text-shadow: 8px 1px 10px #000;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1358px) {
+    .carts_father, .carts_projects_father {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        gap: 10px;
+        /* background-color: blue; */
+    }
+
+    #sobre_mim h1 {
+        font-size: 80px;
+    }
+
+    #sobre_mim h2 {
+        font-size: 50px;       
+    }
+
+    #sobre_mim div .texto p {
+        font-size: 20px;
+    }
+
+    #sobre_mim div nav a {
+        width: 70px;
+        height: 70px;
+    }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 830px) {
+
+    #sobre_mim h1 {
+        font-size: 60px;
+    }
+
+    #sobre_mim h2 {
+        font-size: 30px;       
+    }
+
+    #sobre_mim div .texto p {
+        font-size: 15px;
+    }
+
+    #sobre_mim div nav a {
+        width: 60px;
+        height: 60px;
+    }
+
+    .foto {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+    .carts_father, .carts_projects_father {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+        gap: 10px;
+        /* background-color: blue; */
+    }
+}
+
+/* Galaxy Note 9 414 x 846 */
+@media only screen and (min-width: 412px) and (max-width: 666px){
+    #sobre_mim {
+        padding-top: 120px;
+        padding-bottom: 50px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 170px;
+        /* background-color: rgb(109, 7, 7); */
+
+    }
+    
+    #sobre_mim h1 {
+        font-size: 45px;
+        text-align:center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim h2 {
+        font-size: 25px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim div .texto p {
+        white-space: pre-line;
+        font-size: 12px;
+        text-align:center;
+    }
+
+    #sobre_mim div {
+        /* background-color: blue; */
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sobre_mim div nav{
+        /* background-color: #efefef; */
+        width: 300px;
+    }
+
+    #sobre_mim div nav li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    #sobre_mim div nav li p {
+        color: rgb(25, 226, 241);
+        text-shadow: 8px 1px 10px #000;
+        display: block;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    #sobre_mim div nav a {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        box-shadow: none;
+        background-color: none;
+    }
+
+    .foto {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    #tecnologias {
+        padding-top: 100px;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: hotpink; */
+    }
+
+    .carts_father, .carts_projects_father {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(3, 1fr); */
+
+        gap: 10px;
+        /* background-color: blue; */
+    }
+
+    #projetos {
+        padding-top: 90px;
+        padding-bottom: 30px;
+    }
+
+    
+    #tecnologias .carts_child, #projetos .carts_projects_child {
+        width: 200px;
+        height: 200px;
+    }
+
+    #tecnologias div h1 {
+        display: none;
+    }
+
+    #tecnologias h1, #projetos h1 {
+        font-size: x-large;
+        font-weight: 800;
+        font-size: 35px;
+        margin-bottom: 50px;
+        text-shadow: 8px 1px 10px #000;
+    }
+
 }

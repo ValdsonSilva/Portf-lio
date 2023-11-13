@@ -24,11 +24,12 @@ function Header() {
             <li><a href="#sobre_mim">Sobre mim</a></li>
             <li><a href="#tecnologias">Tecnologias</a></li>
             <li><a href="#projetos">Projetos</a></li>
+            <button onClick={handleTheme} className={`botao ${toggleState ? 'open' : ''}`}>
+                {theme ? <FaMoon size={25}/> : <FaSun size={25}/>}
+            </button>
         </nav>
 
-        <button onClick={handleTheme} className={`botao ${toggleState ? 'open' : ''}`}>
-          {theme ? <FaMoon size={25}/> : <FaSun size={25}/>}
-        </button>
+        
 
         <div className={`menu-toggle ${toggleState ? 'open' : ''}`} onClick={handleToggle} >
             <div className="bar"></div>
