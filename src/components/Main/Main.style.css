@@ -328,7 +328,7 @@ section {
     }
 
     #tecnologias {
-        padding-top: 300px;
+        /* padding-top: 300px; */
         padding-bottom: 30px;
         margin-bottom: 50px;
         display: flex;
@@ -348,7 +348,7 @@ section {
     }
 
     #projetos {
-        padding-top: 300px;
+        /* padding-top: 300px; */
         padding-bottom: 30px;
     }
 
@@ -434,7 +434,7 @@ section {
     }
 
     #tecnologias {
-        padding-top: 300px;
+        padding-top: 20px;
         padding-bottom: 30px;
         margin-bottom: 50px;
         display: flex;
@@ -454,7 +454,7 @@ section {
     }
 
     #projetos {
-        padding-top: 300px;
+        padding-top: 20px;
         padding-bottom: 30px;
     }
 
@@ -610,7 +610,7 @@ section {
     }
 
     #tecnologias {
-        padding-top: 100px;
+        /* padding-top: 100px; */
         padding-bottom: 30px;
         margin-bottom: 50px;
         display: flex;
@@ -630,7 +630,7 @@ section {
     }
 
     #projetos {
-        padding-top: 90px;
+        /* padding-top: 90px; */
         padding-bottom: 30px;
     }
 

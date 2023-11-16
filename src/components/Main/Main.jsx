@@ -4,7 +4,7 @@ import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython} from 'react-ic
 import {MdEmail, MdJavascript} from "react-icons/md"
 import django from "../../assets/Django-icon.svg"
 import { ThemeContext } from "../context/LinghtDarkContext";
-import { useContext} from "react";
+import { useContext, useEffect, useRef} from "react";
 
 function Main() {
     // retorno da API do github
@@ -64,55 +64,65 @@ function Main() {
     // Verificar a distância entre o alvo e o topo
     // Animar o scroll até o alvo
 
-    const menuItems = document.querySelectorAll('.menu a[href^="#"]');
+    // passando o hook useRef nulo
+    const menuItemsRef = useRef(null);
 
-    // Identificar o clique no menu
-    menuItems.forEach(item => {
-        item.addEventListener('click', scrollToIdOnClick);
-    })
+    useEffect(() => {
+        // acesso ao elemento do DOM
+        menuItemsRef.current = document.querySelectorAll('.navegacao a[href^="#"]');
 
-    function getScrollTopByHref(element) {
-        const id = element.getAttribute('href');
-        // retorna a distância do elemento em relação ao topo
-        return document.querySelector(id).offsetTop;
-    }
+        console.log(menuItemsRef.current)
+
+        // Identificar o clique no menu
+        menuItemsRef.current.forEach(item => {
+            item.addEventListener('click', scrollToIdOnClick);
+        })
+
+        function getScrollTopByHref(element) {
+            // pegando o id de cada botão "a"
+            const id = element.getAttribute('href');
+            // retorna a distância do elemento em relação ao topo
+            return document.querySelector(id).offsetTop;
+        }
+
+        function scrollToIdOnClick(event) {
+            event.preventDefault();
+            // distância do elemento em relação ao topo
+            const to = getScrollTopByHref(event.target) - 200;
+            scrollToPosition(to);
+        }
+
+        function scrollToPosition(to) {
+            // window.scroll({
+            //   top: to,
+            //   behavior: "smooth",
+            // });
+            smoothScrollTo(0, to);
+        }
+
+        /**
+        * Smooth scroll animation
+        * @param {int} endX: destination x coordinate
+        * @param {int} endY: destination y coordinate
+        * @param {int} duration: animation duration in ms
+        */
+
+        function smoothScrollTo(endX, endY, duration) {
+            const startX = window.scrollX || window.pageXOffset;
+            const startY = window.scrollY || window.pageYOffset;
+            const distanceX = endX - startX;
+            const distanceY = endY - startY;
+            const startTime = new Date().getTime();
     
-    function scrollToIdOnClick(event) {
-        event.preventDefault();
-        const to = getScrollTopByHref(event.target) - 80;
-        scrollToPosition(to);
-    }
+            duration = typeof duration !== 'undefined' ? duration : 100;
+    
+            // Easing function
+            const easeInOutQuart = (time, from, distance, duration) => {
+                if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+                return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+        };
 
-    function scrollToPosition(to) {
-        // window.scroll({
-        //   top: to,
-        //   behavior: "smooth",
-        // });
-        smoothScrollTo(0, to);
-    }
-
-    /**
-     * Smooth scroll animation
-     * @param {int} endX: destination x coordinate
-     * @param {int} endY: destination y coordinate
-     * @param {int} duration: animation duration in ms
-     */
-    function smoothScrollTo(endX, endY, duration) {
-        const startX = window.scrollX || window.pageXOffset;
-        const startY = window.scrollY || window.pageYOffset;
-        const distanceX = endX - startX;
-        const distanceY = endY - startY;
-        const startTime = new Date().getTime();
-
-        duration = typeof duration !== 'undefined' ? duration : 400;
-
-        // Easing function
-        const easeInOutQuart = (time, from, distance, duration) => {
-            if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
-            return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
-    };
-
-    const timer = setInterval(() => {
+        const timer = setInterval(() => {
             const time = new Date().getTime() - startTime;
             const newX = easeInOutQuart(time, startX, distanceX, duration);
             const newY = easeInOutQuart(time, startY, distanceY, duration);
@@ -120,8 +130,10 @@ function Main() {
                 clearInterval(timer);
             }
             window.scroll(newX, newY);
-        }, 1000 / 60); // 60 fps
+        }, 1000 / 30); // 30 fps
     };
+
+    }, []) // executando apenas uma vez
 
     return (
         
