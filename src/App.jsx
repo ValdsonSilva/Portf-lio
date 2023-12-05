@@ -11,7 +11,6 @@ function App() {
    document.title = "Portfólio Front-End"
 
   useEffect(() => {
-
     return () => {
       document.title = "Portfólio"
     }
