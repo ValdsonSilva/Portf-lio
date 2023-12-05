@@ -537,9 +537,9 @@ section {
 }
 
 /* Galaxy Note 9 414 x 846 */
-@media only screen and (min-width: 412px) and (max-width: 666px){
+@media only screen and (min-width: 411px) and (max-width: 732px){
     #sobre_mim {
-        padding-top: 120px;
+        padding-top: 160px;
         padding-bottom: 50px;
         display:flex;
         flex-direction: column;
@@ -548,6 +548,10 @@ section {
         gap: 170px;
         /* background-color: rgb(109, 7, 7); */
 
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
     }
     
     #sobre_mim h1 {
@@ -590,6 +594,133 @@ section {
     #sobre_mim div nav li p {
         color: rgb(25, 226, 241);
         text-shadow: 8px 1px 10px #000;
+        display: block;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    #sobre_mim div nav a {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        box-shadow: none;
+        background-color: none;
+    }
+
+    .foto {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    #tecnologias {
+        /* padding-top: 100px; */
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: hotpink; */
+    }
+
+    .carts_father, .carts_projects_father {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(3, 1fr); */
+
+        gap: 10px;
+        /* background-color: blue; */
+    }
+
+    #projetos {
+        /* padding-top: 90px; */
+        padding-bottom: 30px;
+    }
+
+    
+    #tecnologias .carts_child, #projetos .carts_projects_child {
+        width: 200px;
+        height: 200px;
+    }
+
+    #tecnologias div h1 {
+        display: none;
+    }
+
+    #tecnologias h1, #projetos h1 {
+        font-size: x-large;
+        font-weight: 800;
+        font-size: 35px;
+        margin-bottom: 50px;
+        text-shadow: 8px 1px 10px #000;
+    }
+
+}
+
+@media only screen and (min-width: 375px) and (max-width: 732px){
+    #sobre_mim {
+        padding-top: 160px;
+        padding-bottom: 50px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 170px;
+        /* background-color: rgb(109, 7, 7); */
+
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    #sobre_mim h1 {
+        font-size: 35px;
+        text-align:center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim h2 {
+        font-size: 20px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #sobre_mim div .texto p {
+        /* white-space: pre-line;
+        font-size: 12px;
+        text-align: center;
+        text-wrap: ; */
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 22vh; 
+    }
+
+    #sobre_mim div {
+        /* background-color: blue; */
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sobre_mim div nav{
+        /* background-color: #efefef; */
+        width: 300px;
+    }
+
+    #sobre_mim div nav li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    #sobre_mim div nav li p {
+        color: rgb(25, 226, 241);
+        text-shadow: 1px 0px 2px #000;
         display: block;
         margin-top: 5px;
         font-size: 12px;

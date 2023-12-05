@@ -1,3 +1,5 @@
+'use client';
+
 import "./Main.style.css"
 import foto from "../../assets/foto.jpeg"
 import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython} from 'react-icons/fa';

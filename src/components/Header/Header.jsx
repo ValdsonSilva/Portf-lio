@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useContext } from 'react'
 import "./Header.style.css"
 import {FaSun, FaMoon} from "react-icons/fa"
