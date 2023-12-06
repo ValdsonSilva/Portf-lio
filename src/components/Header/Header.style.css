@@ -60,7 +60,7 @@ button {
     align-items: center;
 }
 
-button:hover, a:hover {
+button:hover {
     background-color: rgb(25, 226, 241);
     box-shadow: 0 0 10px rgb(25, 226, 241);
 }
@@ -70,7 +70,7 @@ li {
     height: 50px;
 }
 
-a {
+.navegacao  a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,6 +84,11 @@ a {
     width: 160px;
     height: 50px;
     border-radius: 15px;
+}
+
+.navegacao a:hover {
+    background-color: rgb(25, 226, 241);
+    box-shadow: 0 0 10px rgb(25, 226, 241);
 }
 
 /*-------------------responsividade----------------------*/

@@ -7,22 +7,29 @@ import {MdEmail, MdJavascript} from "react-icons/md"
 import django from "../../assets/Django-icon.svg"
 import { ThemeContext } from "../context/LinghtDarkContext";
 import { useContext, useEffect, useRef} from "react";
+import quiz from "../../assets/quiz.png"
 
 function Main() {
-    // retorno da API do github
+    // retorno d API do github
     const repositorios = [
         {
-           nome: "soticon",
-           imagem:"Verde" ,
+           nome: "Quiz Javascript",
+           stacks:"React.js",
+           link: "https://quizjavascript.vercel.app/",
+           alternativo : "Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário."
         },
         {
-            nome: "QuizReact",
-            imagem:"Imagem Quiz" ,
+            nome: "Ballet Bot",
+            stacks:"HTML,CSS,JS" ,
+            link: "https://desafio-ballet-bot.vercel.app/",
+            alternativo : "Desafio de reproduzir layout disponibilizado no fígma de uma landin page do Ballet Bot."
         },
-        {
-            nome: "Busca CEP",
-            imagem:"imagem busca cep" ,
-        }
+        // {
+        //     nome: "Busca CEP",
+        //     imagem:"imagem busca cep" ,
+        //     link: "",
+        //     alternativo : ""
+        // }
     ]
 
     const tecnologias = [
@@ -38,8 +45,8 @@ function Main() {
             stack : 'Django',
             image : <img src={django} 
                          alt="logo do django" 
-                         width={220} 
-                         height={220}
+                         width={200} 
+                         height={200}
                     />
         },
         {
@@ -200,8 +207,11 @@ function Main() {
                 <div className="carts_projects_father">
                     {repositorios.map((repo) => (
                         <div key={repo.id} className="carts_projects_child">
-                            <h2 key={repo.id}>{repo.nome}</h2>
-                            <p key={repo.id}>{repo.imagem}</p>
+                            <h1>{repo.nome}</h1>
+                            <h2>{repo.stacks}</h2>
+                            <div className="linha"></div>
+                            <p>{repo.alternativo}</p>
+                            <a href={repo.link}>Ver projeto...</a>
                         </div>
                     ))}
                 </div>
