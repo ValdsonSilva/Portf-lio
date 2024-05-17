@@ -7,22 +7,29 @@ import {MdEmail, MdJavascript} from "react-icons/md"
 import django from "../../assets/Django-icon.svg"
 import { ThemeContext } from "../context/LinghtDarkContext";
 import { useContext, useEffect, useRef} from "react";
+import balletbot from "../../assets/balletbot.png"
 import quiz from "../../assets/quiz.png"
 
+
 function Main() {
-    // retorno d API do github
+    // lista de imagens de fundo dos projetos
+    const projectsBackImages = [ balletbot, quiz]
+
+    // retorno da API do github
     const repositorios = [
         {
            nome: "Quiz Javascript",
            stacks:"React.js",
            link: "https://quizjavascript.vercel.app/",
-           alternativo : "Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário."
+           alternativo : "Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário.",
+           fundo : projectsBackImages[1]
         },
         {
             nome: "Ballet Bot",
             stacks:"HTML,CSS,JS" ,
             link: "https://desafio-ballet-bot.vercel.app/",
-            alternativo : "Desafio de reproduzir layout disponibilizado no fígma de uma landin page do Ballet Bot."
+            alternativo : "Desafio de reproduzir layout disponibilizado no fígma de uma landin page do Ballet Bot.",
+            fundo : projectsBackImages[0]
         },
         // {
         //     nome: "Busca CEP",
@@ -150,8 +157,8 @@ function Main() {
             <section id="sobre_mim">
                     {/* texto */}
                     <div>
-                        <h1>Valdson Silva</h1>
-                        <h2>Desenvolvedor React.js</h2>
+                        <h1 style={{color: theme ? "#000" : ""}}>Valdson Silva</h1>
+                        <h2 style={{color: theme ? "#F57D1F" : "rgb(25, 226, 241)"}}>Desenvolvedor React.js</h2>
                         <div className="texto">
                             <p className={`p ${theme ? 'dark' : ''}`}>
                             Olá, meu nome é Valdson Silva, 
@@ -185,25 +192,45 @@ function Main() {
                         </nav>
                     </div>
 
-                    <figure>
-                        <img src={foto} alt='minha foto' className="foto"/>
-                    </figure>
+                    <div className="container">
+                        <i style={{color: theme ? "#F57D1F" : "#fff"}}></i>
+                        <i style={{color: theme ? "#F57D1F" : "#fff"}}></i>
+                        <i style={{color: theme ? "#F57D1F" : "#fff"}}></i>
+
+                        <figure>
+                            <img src={foto} alt='minha foto' className="foto" style={{borderColor: theme ? "#F57D1F" : "#fff"}}/>
+                        </figure>
+                    </div>
+
             </section>
 
+            {/* <section id="sobre">
+                <h1 style={{color: theme ? 'orange' : '#19e2f1'}}>Sobre mim</h1>
+                
+                <div>
+                    <p style={{color: theme ? 'orange' : ' #19e2f1'}}>
+                        Desenvolvedor apaixonado pelo universo do Front-end.
+                        Atualmente estou em formação pela Instituto Federal de Educação Ciência e Tecnologia do Piauí. 
+                        Possuo domínio em JavaScript, CSS e HTML, além de experiência com ferramentas como React.js e Django.  
+                        Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e facilidade em trabalhar em equipes.
+                    </p>
+                </div>
+            </section> */}
+
             <section id="tecnologias">
-                <h1>Tecnologias</h1>
+                <h1 style={{color: theme ? "#000" : ""}}>Tecnologias</h1>
                 <div className="carts_father">
                     {tecnologias.map((tech) => (
                         <div key={tech.id} className="carts_child">
                             {tech.image}
-                            <h1 key={tech.id}>{tech.stack}</h1>
+                            <h1 key={tech.id} style={{color: theme ? "#F57D1F" : "#000"}}>{tech.stack}</h1>
                         </div>
                     ))}
                 </div>
             </section>
 
             <section id="projetos">
-                <h1>Projetos</h1>
+                <h1 style={{color: theme ? "#000" : ""}}>Projetos</h1>
                 <div className="carts_projects_father">
                     {repositorios.map((repo) => (
                         <div key={repo.id} className="carts_projects_child">
