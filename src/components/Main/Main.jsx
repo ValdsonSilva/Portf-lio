@@ -60,7 +60,8 @@ function Main() {
                            para que fosse desenvolvida essa plataforma única para o nosso cliente, contando 
                            com diversas funcionalidades, a plataforma se asemelha bastante ao Google Class, 
                            porém, conta com as particularidades que o cliente pediu, como
-                           módulos voltados para o gerenciamento de concursos públicos realizados pelo CEF.`,
+                           módulos voltados para o gerenciamento de concursos públicos realizados pelo CEF.
+                           Essa plataforma foi feita com Next.js, CSS, Tailwind, Mui Material, Django.`,
             fundo : projectsBackImages[3]
         }
     ]
