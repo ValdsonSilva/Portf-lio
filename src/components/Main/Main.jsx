@@ -1,4 +1,4 @@
-'use client';
+'use-client';
 
 import "./Main.style.css"
 import foto from "../../assets/foto.jpeg"
@@ -6,37 +6,63 @@ import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython} from 'react-ic
 import {MdEmail, MdJavascript} from "react-icons/md"
 import django from "../../assets/Django-icon.svg"
 import { ThemeContext } from "../context/LinghtDarkContext";
-import { useContext, useEffect, useRef} from "react";
+import { useContext, useEffect, useRef, useState} from "react";
 import balletbot from "../../assets/balletbot.png"
 import quiz from "../../assets/quiz.png"
+import foto_pessoal from "../../assets/foto_pessoal.png"
+import caistech from "../../assets/Caistech.jpg"
+import cef from "../../assets/CefFloriano.png"
+
 
 
 function Main() {
+    const [loaded, setLoaded] = useState(false)
     // lista de imagens de fundo dos projetos
-    const projectsBackImages = [ balletbot, quiz]
+    const projectsBackImages = [ balletbot, quiz, caistech, cef]
 
     // retorno da API do github
     const repositorios = [
         {
-           nome: "Quiz Javascript",
-           stacks:"React.js",
-           link: "https://quizjavascript.vercel.app/",
-           alternativo : "Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário.",
-           fundo : projectsBackImages[1]
-        },
-        {
             nome: "Ballet Bot",
             stacks:"HTML,CSS,JS" ,
             link: "https://desafio-ballet-bot.vercel.app/",
-            alternativo : "Desafio de reproduzir layout disponibilizado no fígma de uma landin page do Ballet Bot.",
+            alternativo : `Desafio de reproduzir layout disponibilizado no fígma de uma 
+                           landin page do Ballet Bot. Nesse site estou utilizando as tecnologias
+                           básicas de front-end como, HTML, CSS E JavaScript.`,
             fundo : projectsBackImages[0]
         },
-        // {
-        //     nome: "Busca CEP",
-        //     imagem:"imagem busca cep" ,
-        //     link: "",
-        //     alternativo : ""
-        // }
+        {
+           nome: "Quiz Javascript",
+           stacks:"React.js",
+           link: "https://quizjavascript.vercel.app/",
+           alternativo : `Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário.
+                          Esse quiz se trata do meu primeiro projeto em React, nele faço uso de alguns hooks
+                          como useState, useEffect e o código também conta com o gerenciamento de estados globais
+                          no contexto do jogo.`,
+           fundo : projectsBackImages[1]
+        },
+        {
+            nome: "CaisTech 2024",
+            stacks:"HTML,CSS,JS" ,
+            link: "https://valdson-silva-cais-tech24.vercel.app/",
+            alternativo : `Projeto voluntário de construção de site para um evento institucional da universidade.
+                           O evento é chamado CaisTech que se tratar do maior evento de tecnologia do Sul do Piauí,
+                           eu e mais 2 colegas utilizamos as tecnologias: HTML, CSS e JavaScript para construir essa
+                           UI magnifica do jeito que o nosso evento merece.`,
+            fundo : projectsBackImages[2]
+        },
+        {
+            nome: "CEF Floriano",
+            stacks:"HTML,CSS,JS" ,
+            link: "https://cefedu.com.br/",
+            alternativo : `Projeto freelancer de um site institucional do CEF Floriano-Pi.
+                           O CEF é uma instituição de ensino que contou comigo e mais 4 colegas 
+                           para que fosse desenvolvida essa plataforma única para o nosso cliente, contando 
+                           com diversas funcionalidades, a plataforma se asemelha bastante ao Google Class, 
+                           porém, conta com as particularidades que o cliente pediu, como
+                           módulos voltados para o gerenciamento de concursos públicos realizados pelo CEF.`,
+            fundo : projectsBackImages[3]
+        }
     ]
 
     const tecnologias = [
@@ -71,9 +97,6 @@ function Main() {
     ]
 
     const {theme} = useContext(ThemeContext)
-
-    // console.log(theme)
-
 
     // Identificar o clique no menu
     // Verificar o item que foi clicado e fazer referência com o alvo
@@ -122,8 +145,9 @@ function Main() {
         * @param {int} endY: destination y coordinate
         * @param {int} duration: animation duration in ms
         */
-
+        
         function smoothScrollTo(endX, endY, duration) {
+
             const startX = window.scrollX || window.pageXOffset;
             const startY = window.scrollY || window.pageYOffset;
             const distanceX = endX - startX;
@@ -158,12 +182,12 @@ function Main() {
                     {/* texto */}
                     <div>
                         <h1 style={{color: theme ? "#000" : ""}}>Valdson Silva</h1>
-                        <h2 style={{color: theme ? "#F57D1F" : "rgb(25, 226, 241)"}}>Desenvolvedor React.js</h2>
+                        <h2 style={{color: theme ? "#F57D1F" : "rgb(25, 226, 241)"}}>Desenvolvedor Front-end</h2>
                         <div className="texto">
-                            <p className={`p ${theme ? 'dark' : ''}`}>
-                            Olá, meu nome é Valdson Silva, 
-                            sou desenvolvedor Front-end
-                            e adoro criar coisas para a web.
+                            <p style={{color: theme ? '#000' : ''}}>
+                            Olá, meu nome é Valdson, sou um desenvolvedor 
+                            Front-end e estou aqui para resolver 
+                            seus problemas.
                             </p>
                         </div>
 
@@ -198,24 +222,34 @@ function Main() {
                         <i style={{color: theme ? "#F57D1F" : "#fff"}}></i>
 
                         <figure>
-                            <img src={foto} alt='minha foto' className="foto" style={{borderColor: theme ? "#F57D1F" : "#fff"}}/>
+                            <img src={foto_pessoal} alt='minha foto' className="foto" style={{borderColor: theme ? "#F57D1F" : "#fff"}}/>
                         </figure>
                     </div>
 
             </section>
 
-            {/* <section id="sobre">
-                <h1 style={{color: theme ? 'orange' : '#19e2f1'}}>Sobre mim</h1>
+            <section id="sobre">
+                <h1 style={{color: theme ? '#000' : '#19e2f1'}}>Sobre mim</h1>
                 
                 <div>
-                    <p style={{color: theme ? 'orange' : ' #19e2f1'}}>
-                        Desenvolvedor apaixonado pelo universo do Front-end.
+                    <p style={{color: theme ? '#000' : '#fff'}}>
+                        Desenvolvedor apaixonado pelo universo do <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>Front-end</span>.
                         Atualmente estou em formação pela Instituto Federal de Educação Ciência e Tecnologia do Piauí. 
-                        Possuo domínio em JavaScript, CSS e HTML, além de experiência com ferramentas como React.js e Django.  
+                        Possuo domínio em <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>React.js, Next, React Native, Next.js e Django</span>.  
                         Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e facilidade em trabalhar em equipes.
                     </p>
+                    
+                    <div className="fundo1" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
+                        <div className="fundo2" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
+                            <div className="fundo3" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
+                                <figure className="FotoContainer">
+                                    <img className="fotoPessoal" src={foto} style={{borderRadius: "100%"}} alt="Foto pessoal sorrindo" />
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section> */}
+            </section>
 
             <section id="tecnologias">
                 <h1 style={{color: theme ? "#000" : ""}}>Tecnologias</h1>
@@ -232,13 +266,19 @@ function Main() {
             <section id="projetos">
                 <h1 style={{color: theme ? "#000" : ""}}>Projetos</h1>
                 <div className="carts_projects_father">
-                    {repositorios.map((repo) => (
-                        <div key={repo.id} className="carts_projects_child">
-                            <h1>{repo.nome}</h1>
-                            <h2>{repo.stacks}</h2>
-                            <div className="linha"></div>
-                            <p>{repo.alternativo}</p>
-                            <a href={repo.link}>Ver projeto...</a>
+                    {repositorios.map((repo, index) => (
+                        <div key={repo.nome} className={index % 2 === 0 ? 'row' : 'reverse'}>  
+                            <a href={repo.link}>
+                                <figure className="carts_projects_child">
+                                    <img src={repo.fundo}></img>
+                                </figure>
+                            </a>
+                            <div>
+                                <h1 id="projetos" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#19e2f1'}}>{repo.nome}</h1>
+                                <text style={{color: theme ? "#000" : "#fff", fontWeight:"bold", lineHeight: 1.5, textAlign:"start"}}>
+                                    {repo.alternativo}
+                                </text>
+                            </div>
                         </div>
                     ))}
                 </div>
