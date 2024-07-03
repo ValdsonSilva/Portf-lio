@@ -676,7 +676,7 @@ section {
     #sobre > div {
         display: flex;
         flex-direction: column-reverse;
-        background-color: rgb(128, 22, 208);
+        /* background-color: rgb(128, 22, 208); */
         padding: 20% 10%;
         gap: 100px;
     }
