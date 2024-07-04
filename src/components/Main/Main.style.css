@@ -97,9 +97,9 @@ section {
     font-size: 24px;
     font-weight: 900;
     letter-spacing: 0em;
-    text-align: start;
+    text-align: justify;
     color: #ffffffe8;
-    text-shadow: 2px 0px 6px rgb(0, 0, 0);
+    /* text-shadow: 2px 0px 6px rgb(0, 0, 0); */
     max-width: 600px;
     margin: 0 auto;
     line-height: 26px;
@@ -290,7 +290,7 @@ section {
     font-size: 24px;
     font-weight: 900;
     letter-spacing: 0em;
-    text-align: start;
+    text-align: justify;
     color: #ffffffe8;
     /* text-shadow: 2px 0px 6px rgb(0, 0, 0); */
     max-width: 600px;
@@ -525,7 +525,7 @@ section {
         white-space: pre-line;
 
         font-size: 18px;
-        text-align: center;
+        text-align: justify;
 
     }
 
@@ -638,7 +638,7 @@ section {
         white-space: pre-line;
 
         font-size: 18px;
-        text-align: center;
+        text-align: justify;
     }
 
     #sobre_mim div {
@@ -797,6 +797,7 @@ section {
 
     #sobre_mim div .texto p {
         font-size: 20px;
+        text-align: justify;
     }
 
     #sobre_mim div nav a {
@@ -827,6 +828,7 @@ section {
 
     #sobre_mim div .texto p {
         font-size: 15px;
+        text-align: justify;
     }
 
     #sobre_mim div nav a {
@@ -895,7 +897,7 @@ section {
     #sobre_mim div .texto p {
         white-space: pre-line;
         font-size: 12px;
-        text-align:center;
+        text-align: justify;
     }
 
     #sobre_mim div {
@@ -997,6 +999,7 @@ section {
 
     .carts_projects_child > p {
         margin: 0px 0px;
+        text-align: justify;
     }
 
     .linha {
@@ -1034,6 +1037,7 @@ section {
     #sobre div > p {
         font-size: 12px;
         line-height: 20px;
+        text-align: justify;
     }
 
 }
@@ -1077,6 +1081,7 @@ section {
         justify-content: center;
         align-items: center;
         height: 22vh; 
+        text-align: justify;
     }
 
     #sobre_mim div {
@@ -1104,6 +1109,7 @@ section {
         display: block;
         margin-top: 5px;
         font-size: 12px;
+        text-align: justify;
     }
 
     #sobre_mim div nav a {

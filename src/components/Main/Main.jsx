@@ -236,7 +236,7 @@ function Main() {
                     <p style={{color: theme ? '#000' : '#fff'}}>
                         Desenvolvedor apaixonado pelo universo do <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>Front-end</span>.
                         Atualmente estou em formação pela Instituto Federal de Educação Ciência e Tecnologia do Piauí. 
-                        Possuo domínio em <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>React.js, Next, React Native, Next.js e Django</span>.  
+                        Possuo domínio em <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>React.js, Next, React Native e Django</span>.  
                         Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e facilidade em trabalhar em equipes.
                     </p>
                     
@@ -276,9 +276,9 @@ function Main() {
                             </a>
                             <div>
                                 <h1 id="projetos" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#19e2f1'}}>{repo.nome}</h1>
-                                <text style={{color: theme ? "#000" : "#fff", fontWeight:"bold", lineHeight: 1.5, textAlign:"start"}}>
+                                <p style={{color: theme ? "#000" : "#fff", fontWeight:"bold", lineHeight: 1.5, textAlign: "justify"}}>
                                     {repo.alternativo}
-                                </text>
+                                </p>
                             </div>
                         </div>
                     ))}
