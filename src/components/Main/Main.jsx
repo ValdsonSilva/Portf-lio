@@ -18,39 +18,10 @@ import cef from "../../assets/CefFloriano.png"
 function Main() {
     const [loaded, setLoaded] = useState(false)
     // lista de imagens de fundo dos projetos
-    const projectsBackImages = [ balletbot, quiz, caistech, cef]
+    const projectsBackImages = [ cef, caistech, balletbot, quiz, ]
 
     // retorno da API do github
     const repositorios = [
-        {
-            nome: "Ballet Bot",
-            stacks:"HTML,CSS,JS" ,
-            link: "https://desafio-ballet-bot.vercel.app/",
-            alternativo : `Desafio de reproduzir layout disponibilizado no fígma de uma 
-                           landin page do Ballet Bot. Nesse site estou utilizando as tecnologias
-                           básicas de front-end como, HTML, CSS E JavaScript.`,
-            fundo : projectsBackImages[0]
-        },
-        {
-           nome: "Quiz Javascript",
-           stacks:"React.js",
-           link: "https://quizjavascript.vercel.app/",
-           alternativo : `Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário.
-                          Esse quiz se trata do meu primeiro projeto em React, nele faço uso de alguns hooks
-                          como useState, useEffect e o código também conta com o gerenciamento de estados globais
-                          no contexto do jogo.`,
-           fundo : projectsBackImages[1]
-        },
-        {
-            nome: "CaisTech 2024",
-            stacks:"HTML,CSS,JS" ,
-            link: "https://valdson-silva-cais-tech24.vercel.app/",
-            alternativo : `Projeto voluntário de construção de site para um evento institucional da universidade.
-                           O evento é chamado CaisTech que se tratar do maior evento de tecnologia do Sul do Piauí,
-                           eu e mais 2 colegas utilizamos as tecnologias: HTML, CSS e JavaScript para construir essa
-                           UI magnifica do jeito que o nosso evento merece.`,
-            fundo : projectsBackImages[2]
-        },
         {
             nome: "CEF Floriano",
             stacks:"HTML,CSS,JS" ,
@@ -62,8 +33,37 @@ function Main() {
                            porém, conta com as particularidades que o cliente pediu, como
                            módulos voltados para o gerenciamento de concursos públicos realizados pelo CEF.
                            Essa plataforma foi feita com Next.js, CSS, Tailwind, Mui Material, Django.`,
-            fundo : projectsBackImages[3]
-        }
+            fundo : projectsBackImages[0]
+        },
+        {
+            nome: "CaisTech 2024",
+            stacks:"HTML,CSS,JS" ,
+            link: "https://valdson-silva-cais-tech24.vercel.app/",
+            alternativo : `Projeto voluntário de construção de site para um evento institucional da universidade.
+                           O evento é chamado CaisTech que se tratar do maior evento de tecnologia do Sul do Piauí,
+                           eu e mais 2 colegas utilizamos as tecnologias: HTML, CSS e JavaScript para construir essa
+                           UI magnifica do jeito que o nosso evento merece.`,
+            fundo : projectsBackImages[1]
+        },
+        {
+            nome: "Ballet Bot",
+            stacks:"HTML,CSS,JS" ,
+            link: "https://desafio-ballet-bot.vercel.app/",
+            alternativo : `Desafio de reproduzir layout disponibilizado no fígma de uma 
+                           landin page do Ballet Bot. Nesse site estou utilizando as tecnologias
+                           básicas de front-end como, HTML, CSS E JavaScript.`,
+            fundo : projectsBackImages[2]
+        },
+        {
+           nome: "Quiz Javascript",
+           stacks:"React.js",
+           link: "https://quizjavascript.vercel.app/",
+           alternativo : `Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário.
+                          Esse quiz se trata do meu primeiro projeto em React, nele faço uso de alguns hooks
+                          como useState, useEffect e o código também conta com o gerenciamento de estados globais
+                          no contexto do jogo.`,
+           fundo : projectsBackImages[3]
+        },
     ]
 
     const tecnologias = [
