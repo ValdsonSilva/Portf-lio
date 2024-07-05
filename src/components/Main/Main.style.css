@@ -516,7 +516,7 @@ section {
     }
 
     #sobre_mim h2 {
-        font-size: 40px;
+        font-size: 50px;
         text-align: center;
         white-space: nowrap;
     }
@@ -797,6 +797,7 @@ section {
     #sobre_mim div .texto p {
         font-size: 20px;
         text-align: justify;
+        line-height: 20px;
     }
 
     #sobre_mim div nav a {
