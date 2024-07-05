@@ -1,4 +1,4 @@
-'use-client';
+'use client';
 
 import "./Main.style.css"
 import foto from "../../assets/foto.jpeg"
