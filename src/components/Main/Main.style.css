@@ -899,6 +899,9 @@ section {
         white-space: pre-line;
         font-size: 12px;
         text-align: justify;
+        background-color: red;
+        width: 100%;
+        line-height: 15px;
     }
 
     #sobre_mim div {
