@@ -892,6 +892,7 @@ section {
         font-size: 25px;
         text-align: center;
         white-space: nowrap;
+        line-height: 15px;
     }
 
     #sobre_mim div .texto p {
@@ -1069,6 +1070,7 @@ section {
         font-size: 20px;
         text-align: center;
         white-space: nowrap;
+        line-height: 20px;
     }
 
     #sobre_mim div .texto p {
