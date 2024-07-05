@@ -865,7 +865,7 @@ section {
 @media only screen and (min-width: 411px) and (max-width: 732px){
     #sobre_mim {
         padding-top:16px;
-        padding-bottom: 50px;
+        padding-bottom: 10px;
         display:flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -960,7 +960,7 @@ section {
     #tecnologias {
         /* padding-top: 100px; */
         padding-bottom: 30px;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -988,7 +988,7 @@ section {
 
     #projetos {
         /* padding-top: 90px; */
-        padding-bottom: 30px;
+        padding-bottom: 10px;
     }
     
     #tecnologias .carts_child {
@@ -1056,7 +1056,7 @@ section {
 @media only screen and (min-width: 375px) and (max-width: 732px){
     #sobre_mim {
         margin-top: 100px;
-        padding-bottom: 50px;
+        padding-bottom: 10px;
         display:flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -1141,7 +1141,7 @@ section {
     #tecnologias {
         /* padding-top: 100px; */
         padding-bottom: 30px;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1169,7 +1169,7 @@ section {
 
     #projetos {
         /* padding-top: 90px; */
-        padding-bottom: 30px;
+        padding-bottom: 10px;
     }
 
     .linha {
