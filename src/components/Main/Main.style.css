@@ -895,13 +895,20 @@ section {
         line-height: 15px;
     }
 
+    #sobre_mim div .texto {
+        height: 50%;
+        width: 80%;
+        padding: 8px 8px;
+        /* background-color: greenyellow; */
+    }
+
     #sobre_mim div .texto p {
         white-space: pre-line;
         font-size: 12px;
         text-align: justify;
-        background-color: red;
-        width: 100%;
-        line-height: 15px;
+        margin: 5px;
+        /* background-color: red; */
+        /* line-height: 15px; */
     }
 
     #sobre_mim div {
