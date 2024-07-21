@@ -19,15 +19,15 @@ function Header() {
 
   return (
     <header className='cabecalho'>
-        <h1>front-end</h1>
+        <h1>Silva</h1>
 
         <nav className={`navegacao ${toggleState ? 'open' : ''}`}>
             <li><a href="#sobre">Sobre mim</a></li>
             <li><a href="#tecnologias">Tecnologias</a></li>
             <li><a href="#projetos">Projetos</a></li>
-            <button onClick={handleTheme} className={`botao ${toggleState ? 'open' : ''}`}>
+            {/* <button onClick={handleTheme} className={`botao ${toggleState ? 'open' : ''}`}>
                 {theme ? <FaMoon size={25}/> : <FaSun size={25}/>}
-            </button>
+            </button> */}
         </nav>
 
         

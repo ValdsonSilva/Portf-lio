@@ -182,10 +182,10 @@ function Main() {
             <section id="sobre_mim">
                     {/* texto */}
                     <div>
-                        <h1 style={{color: theme ? "#000" : ""}}>Valdson Silva</h1>
+                        <h1 style={{color: theme ? "#000" : "#000"}}>Valdson Silva</h1>
                         <h2 style={{color: theme ? "#F57D1F" : "rgb(25, 226, 241)"}}>Desenvolvedor Front-end</h2>
                         <div className="texto">
-                            <p style={{color: theme ? '#000' : ''}}>
+                            <p style={{color: theme ? '#000' : '#000'}}>
                             Olá, meu nome é Valdson, sou um desenvolvedor 
                             Front-end e estou aqui para resolver 
                             seus problemas.
@@ -218,12 +218,12 @@ function Main() {
                     </div>
 
                     <div className="container">
-                        <i style={{color: theme ? "#F57D1F" : "#fff"}}></i>
-                        <i style={{color: theme ? "#F57D1F" : "#fff"}}></i>
-                        <i style={{color: theme ? "#F57D1F" : "#fff"}}></i>
+                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
+                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
+                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
 
                         <figure>
-                            <img src={foto_pessoal} alt='minha foto' className="foto" style={{borderColor: theme ? "#F57D1F" : "#fff"}}/>
+                            <img src={foto_pessoal} alt='minha foto' className="foto" style={{borderColor: theme ? "#fff" : "#F57D1F"}}/>
                         </figure>
                     </div>
 

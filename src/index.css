@@ -2,7 +2,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family:Arial, Helvetica, sans-serif;
+  /* font-family:Arial, Helvetica, sans-serif; */
+  font-family: 'Poppins', sans-serif;
 }
 
 /* body {
@@ -15,4 +16,16 @@ h1 {
 
 button, a {
   cursor: pointer;
+}
+
+:root {
+  --bg-color: #ececec;
+  --second-bg-color: #ffffff;
+  --text-color: rgb(3, 35, 94);
+  --second-color: rgb(0, 0, 0);
+  --main-color: #c96522;
+  --big-font: 5rem;
+  --h2-font: 3rem;
+  --p-font: 1.1rem;
+  --p-small-font: 0.9rem;
 }
