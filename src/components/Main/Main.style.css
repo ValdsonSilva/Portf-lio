@@ -35,6 +35,7 @@ section {
     align-items: center;
     background-image: url("../../assets/background.jpg");   
     background-size: cover;
+    background-position: center;
 }
 
 #sobre_mim div {
@@ -60,11 +61,15 @@ section {
 }
 
 #sobre_mim h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: clamp(56px, 4vw, 24px);
     font-weight: 900;
     letter-spacing: 0em;
-    text-align: left;
+    /* text-align: left; */
     text-shadow: 0px 1px 6px rgb(0, 0, 0);
+    width: 100%;
     /* color: rgb(25, 226, 241); */
     /* animation: glowing 2s infinite;  */
 }
@@ -100,7 +105,7 @@ section {
 #sobre_mim div .texto p {
     /* font-family:'Righteous', cursive; */
     font-size: 24px;
-    font-weight: 900;
+    /* font-weight: 900; */
     letter-spacing: 0em;
     text-align: justify;
     color: #ffffffe8;
@@ -170,7 +175,7 @@ section {
     z-index: 0;
 }
 
-.container i:nth-child(1) {
+/* .container i:nth-child(1) {
     border-radius: 45% 55% 43% 57% / 30% 34% 66% 70% ;
     border: 4px solid;
     animation: animar 8s linear infinite;
@@ -186,7 +191,7 @@ section {
     border-radius: 77% 23% 39% 61% / 34% 24% 76% 66% ;
     border: 4px solid;
     animation: animar 12s linear infinite;
-}
+} */
 
 @keyframes animar {
     0% {
@@ -221,7 +226,7 @@ section {
     font-size: x-large;
     font-weight: 800;
     font-size: 60px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     /* text-shadow: 8px 1px 10px #000; */
     color: #19e2f1;
     margin-bottom: 100px;
@@ -294,7 +299,7 @@ section {
 #sobre div p {
     /* font-family:'Righteous', cursive; */
     font-size: 24px;
-    font-weight: 900;
+    /* font-weight: 900; */
     letter-spacing: 0em;
     text-align: justify;
     color: #ffffffe8;
@@ -307,10 +312,11 @@ section {
 /* --------TECNOLOGIAS---------- */
 
 #tecnologias {
-    /* margin-top: 280px; */
+    padding-top: 280px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--second-bg-color);
 }
 
@@ -380,9 +386,11 @@ section {
 /* --------PROJETOS---------- */
 
 #projetos {
+    padding-top: 180px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--bg-color);
     margin: 0px;
 }
@@ -394,7 +402,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 50px;
+    /* gap: 30px; */
     /* background-color: green; */
 }
 

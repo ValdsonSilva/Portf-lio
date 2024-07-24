@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import "./Header.style.css"
 import {FaSun, FaMoon} from "react-icons/fa"
 import { ThemeContext } from '../context/LinghtDarkContext'
@@ -11,15 +11,32 @@ function Header() {
   const {theme, handleTheme} = useContext(ThemeContext)
 
   const [toggleState, setToggleState] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   function handleToggle(event) {
       event.preventDefault()
       setToggleState(!toggleState)
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setScrolled(true)
+        } else {
+            setScrolled(false)
+        }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+        window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <header className='cabecalho'>
-        <h1>Silva</h1>
+    <header className={`cabecalho ${scrolled ? 'scrolled' : ''}`}>
+        <a href='#sobre_mim' style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+            <p style={{color:"#F57D1F", fontWeight:"900", fontSize:"40px"}}>S</p>ilva
+        </a>
 
         <nav className={`navegacao ${toggleState ? 'open' : ''}`}>
             <li><a href="#sobre">Sobre mim</a></li>

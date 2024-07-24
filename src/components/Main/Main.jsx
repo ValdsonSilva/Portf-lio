@@ -127,8 +127,8 @@ function Main() {
 
         function scrollToIdOnClick(event) {
             event.preventDefault();
-            // distância do elemento em relação ao topo
-            const to = getScrollTopByHref(event.target) - 200;
+            // distância do elemento em relação ao topo 
+            const to = getScrollTopByHref(event.target) - 50; // tive que diminuir para nivelar na section
             scrollToPosition(to);
         }
 
@@ -182,10 +182,12 @@ function Main() {
             <section id="sobre_mim">
                     {/* texto */}
                     <div>
-                        <h1 style={{color: theme ? "#000" : "#000"}}>Valdson Silva</h1>
-                        <h2 style={{color: theme ? "#F57D1F" : "rgb(25, 226, 241)"}}>Desenvolvedor Front-end</h2>
+                        <h1 style={{color: "#03235e"}}>Valdson Silva</h1>
+                        <h2 style={{color: "#F57D1F"}}>
+                            Desenvolvedor Front-end
+                        </h2>
                         <div className="texto">
-                            <p style={{color: theme ? '#000' : '#000'}}>
+                            <p style={{color: "#000"}}>
                             Olá, meu nome é Valdson, sou um desenvolvedor 
                             Front-end e estou aqui para resolver 
                             seus problemas.
@@ -233,7 +235,7 @@ function Main() {
                 <h1 style={{color: theme ? '#000' : '#19e2f1'}}>Sobre mim</h1>
                 
                 <div>
-                    <p style={{color: theme ? '#000' : '#fff'}}>
+                    <p style={{color: '#000'}}>
                         Desenvolvedor apaixonado pelo universo do <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>Front-end</span>.
                         Atualmente estou em formação pela Instituto Federal de Educação Ciência e Tecnologia do Piauí. 
                         Possuo domínio em <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>React.js, Next, React Native e Django</span>.  
@@ -275,8 +277,8 @@ function Main() {
                                 </figure>
                             </a>
                             <div>
-                                <h1 id="projetos" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#19e2f1'}}>{repo.nome}</h1>
-                                <p style={{color: theme ? "#000" : "#fff", fontWeight:"bold", lineHeight: 1.5, textAlign: "justify"}}>
+                                <h1 id="projetos" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#F57D1F'}}>{repo.nome}</h1>
+                                <p style={{color: "#000", fontWeight:"bold", lineHeight: 1.5, textAlign: "justify"}}>
                                     {repo.alternativo}
                                 </p>
                             </div>
