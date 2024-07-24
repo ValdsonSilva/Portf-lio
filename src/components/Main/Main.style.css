@@ -436,6 +436,15 @@ section {
     border: 2px solid #fff;
 }
 
+#projetos > h1 {
+    color: rgb(25, 226, 241);
+    font-size: x-large;
+    font-weight: 800;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+
 #projetos .carts_projects_child > img:hover {
     height: 40em;
     width: 30em;
@@ -495,7 +504,7 @@ section {
     background-color: rgb(204, 200, 200);
 }
 
-#projetos > h1 {
+#projetos_title > h1 {
     color: rgb(25, 226, 241);
     font-size: x-large;
     font-weight: 800;

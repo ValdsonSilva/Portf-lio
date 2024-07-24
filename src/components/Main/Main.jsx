@@ -277,7 +277,7 @@ function Main() {
                                 </figure>
                             </a>
                             <div>
-                                <h1 id="projetos" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#F57D1F'}}>{repo.nome}</h1>
+                                <h1 id="projetos_title" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#F57D1F'}}>{repo.nome}</h1>
                                 <p style={{color: "#000", fontWeight:"bold", lineHeight: 1.5, textAlign: "justify"}}>
                                     {repo.alternativo}
                                 </p>
