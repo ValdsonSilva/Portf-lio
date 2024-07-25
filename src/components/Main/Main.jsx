@@ -1,7 +1,7 @@
 'use client';
 
 import "./Main.style.css"
-import foto from "../../assets/foto.jpeg"
+import foto from "../../assets/foto_forte.jpg"
 import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython} from 'react-icons/fa';
 import {MdEmail, MdJavascript} from "react-icons/md"
 import django from "../../assets/Django-icon.svg"
@@ -32,7 +32,8 @@ function Main() {
                            com diversas funcionalidades, a plataforma se asemelha bastante ao Google Class, 
                            porém, conta com as particularidades que o cliente pediu, como
                            módulos voltados para o gerenciamento de concursos públicos realizados pelo CEF.
-                           Essa plataforma foi feita com Next.js, CSS, Tailwind, Mui Material, Django.`,
+                           Essa plataforma foi feita com `,
+            tecnologias: ["Next.js", "CSS", "Tailwind", "Mui Material", "Django."],
             fundo : projectsBackImages[0]
         },
         {
@@ -41,8 +42,8 @@ function Main() {
             link: "https://valdson-silva-cais-tech24.vercel.app/",
             alternativo : `Projeto voluntário de construção de site para um evento institucional da universidade.
                            O evento é chamado CaisTech que se tratar do maior evento de tecnologia do Sul do Piauí,
-                           eu e mais 2 colegas utilizamos as tecnologias: HTML, CSS e JavaScript para construir essa
-                           UI magnifica do jeito que o nosso evento merece.`,
+                           eu e mais 2 colegas construimos essa UI magnifica do jeito que o nosso evento merece utilizando `,
+            tecnologias: ["HTML", "CSS", "JavaScript."],
             fundo : projectsBackImages[1]
         },
         {
@@ -51,7 +52,8 @@ function Main() {
             link: "https://desafio-ballet-bot.vercel.app/",
             alternativo : `Desafio de reproduzir layout disponibilizado no fígma de uma 
                            landin page do Ballet Bot. Nesse site estou utilizando as tecnologias
-                           básicas de front-end como, HTML, CSS E JavaScript.`,
+                           básicas de front-end como `,
+            tecnologias: ["HTML", "CSS", "JavaScript."],
             fundo : projectsBackImages[2]
         },
         {
@@ -62,6 +64,7 @@ function Main() {
                           Esse quiz se trata do meu primeiro projeto em React, nele faço uso de alguns hooks
                           como useState, useEffect e o código também conta com o gerenciamento de estados globais
                           no contexto do jogo.`,
+            tecnologias: [""],
            fundo : projectsBackImages[3]
         },
     ]
@@ -182,7 +185,7 @@ function Main() {
             <section id="sobre_mim">
                     {/* texto */}
                     <div>
-                        <h1 style={{color: "#03235e"}}>Valdson Silva</h1>
+                        <h1 style={{color: "#19e2f1"}}>Valdson Silva</h1>
                         <h2 style={{color: "#F57D1F"}}>
                             Desenvolvedor Front-end
                         </h2>
@@ -220,9 +223,9 @@ function Main() {
                     </div>
 
                     <div className="container">
+                        {/* <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
                         <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
-                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
-                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
+                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i> */}
 
                         <figure>
                             <img src={foto_pessoal} alt='minha foto' className="foto" style={{borderColor: theme ? "#fff" : "#F57D1F"}}/>
@@ -242,15 +245,18 @@ function Main() {
                         Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e facilidade em trabalhar em equipes.
                     </p>
                     
-                    <div className="fundo1" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
-                        <div className="fundo2" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
-                            <div className="fundo3" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
+                    {/* <div className="f" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
+                        <div className="" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
+                            <div className="f" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
                                 <figure className="FotoContainer">
                                     <img className="fotoPessoal" src={foto} style={{borderRadius: "100%"}} alt="Foto pessoal sorrindo" />
                                 </figure>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+                    <figure className="FotoContainer">
+                        <img className="fotoPessoal" src={foto} alt="Foto pessoal sorrindo" />
+                    </figure>
                 </div>
             </section>
 
@@ -280,6 +286,9 @@ function Main() {
                                 <h1 id="projetos_title" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#F57D1F'}}>{repo.nome}</h1>
                                 <p style={{color: "#000", fontWeight:"bold", lineHeight: 1.5, textAlign: "justify"}}>
                                     {repo.alternativo}
+                                    <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>
+                                        {repo.tecnologias.join(", ")}
+                                    </span>
                                 </p>
                             </div>
                         </div>

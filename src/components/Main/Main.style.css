@@ -68,7 +68,7 @@ section {
     font-weight: 900;
     letter-spacing: 0em;
     /* text-align: left; */
-    text-shadow: 0px 1px 6px rgb(0, 0, 0);
+    /* text-shadow: 0px 1px 6px rgb(0, 0, 0); */
     width: 100%;
     /* color: rgb(25, 226, 241); */
     /* animation: glowing 2s infinite;  */
@@ -204,8 +204,8 @@ section {
 }
 
 .foto {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     border-radius: 100%;
     border: 5px solid;
     z-index: 10;
@@ -215,11 +215,13 @@ section {
 
 #sobre {
     /* background-color: brown; */
+    padding-top: 200px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     background-color: var(--bg-color);
+    height: auto;
 }
 
 #sobre h1 {
@@ -271,10 +273,11 @@ section {
 .FotoContainer {
     /* background-color: #fff; */
     /* padding: 5%; */
-    width: 500px;
-    height: 400px;
-    border-radius: 45% 55% 43% 57% / 30% 34% 66% 70% ;
-    box-shadow: 1px 1px 20px 5px #000;
+    width: auto;
+    height: auto;
+    /* background-color: red; */
+    /* border-radius: 45% 55% 43% 57% / 30% 34% 66% 70% ; */
+    /* box-shadow: 1px 1px 20px 5px #000; */
 }
 
 @keyframes rotate {
@@ -288,11 +291,13 @@ section {
 }
 
 .fotoPessoal {
-    position:static;
-    z-index: 2; 
+    display: block;
+    /* z-index: 2;  */
     box-shadow: 1px 1px 5px 5px #000;
     width: 430px;
-    height: 430px; 
+    height: 700px;
+    border-radius: 20px;
+    margin-bottom: 120px;
 }
 
 
@@ -902,6 +907,7 @@ section {
 
     #sobre_mim div {
         margin-top: 0;
+        /* background-color: red; */
     }
     
     #sobre_mim h1 {
@@ -915,6 +921,7 @@ section {
         text-align: center;
         white-space: nowrap;
         line-height: 15px;
+        text-shadow: none;
     }
 
     #sobre_mim div .texto {
@@ -1099,7 +1106,7 @@ section {
     }
 
     #sobre_mim h2 {
-        font-size: 20px;
+        font-size: 1.5em;
         text-align: center;
         white-space: nowrap;
         line-height: 20px;
