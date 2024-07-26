@@ -12,6 +12,24 @@ section {
     width: 100%;
 } 
 
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #19e2f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f57d1f;
+    border-radius: 10px;
+    border: 3px solid #19e2f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #D45D00;
+}
+
 .main {
     /* background: linear-gradient(270deg, rgba(1,11,22,1) 39%, rgba(2,40,81,1) 58%, rgba(0,212,255,1) 95%); */
     /* background-image: url("../../assets/fundo.jpg");    */

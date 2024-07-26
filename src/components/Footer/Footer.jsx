@@ -14,7 +14,7 @@ function Footer() {
             marginTop: "10px",
             position: "relative"
         }}>
-            <h1 style={{ color: "#19e2f1" }}>Todos os direitos reservados&copy; 2024</h1>
+            <h1 style={{ color: "#19e2f1", fontSize: "2em"}}>Todos os direitos reservados&copy; 2024</h1>
             <a href='#sobre_mim' style={{
                 position: "fixed",
                 bottom: "20px",

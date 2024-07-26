@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     return () => {
-      document.title = "Portfólio"
+      document.title = "Silva"
     }
   }, [])
 
