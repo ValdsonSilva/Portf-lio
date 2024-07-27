@@ -657,7 +657,7 @@ section {
 @media only screen and (min-width: 600px) and (max-width: 1358px) {
 
     #sobre_mim {
-        padding-top: 200px;
+        padding-top: 150px;
         padding-bottom: 50px;
         display:flex;
         flex-direction: column-reverse;
@@ -1102,7 +1102,7 @@ section {
 
 @media only screen and (min-width: 375px) and (max-width: 732px){
     #sobre_mim {
-        margin-top: 100px;
+        margin-top: 50px;
         padding-bottom: 10px;
         display:flex;
         flex-direction: column-reverse;
