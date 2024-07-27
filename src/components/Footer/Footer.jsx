@@ -6,15 +6,14 @@ function Footer() {
              <footer style={{
             backgroundColor: "#fff",
             width: "100%",
-            height: "10em",
-            color: "#000",
+            height: "5em",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             marginTop: "10px",
             position: "relative"
         }}>
-            <h1 style={{ color: "#19e2f1", fontSize: "2em"}}>Todos os direitos reservados&copy; 2024</h1>
+            <h1 style={{ color: "#000", fontSize: "1.5em"}}>&copy; 2024 Todos os direitos reservados.</h1>
             <a href='#sobre_mim' style={{
                 position: "fixed",
                 bottom: "20px",
