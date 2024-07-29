@@ -284,7 +284,7 @@ function Main() {
                             </a>
                             <div>
                                 <h1 id="projetos_title" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#F57D1F'}}>{repo.nome}</h1>
-                                <p style={{color: "#000", fontWeight:"bold", lineHeight: 1.5, textAlign: "justify"}}>
+                                <p style={{color: "#000", lineHeight: 1.5, textAlign: "justify"}}>
                                     {repo.alternativo}
                                     <span style={{color: theme ? "#F57D1F" : "#19e2f1"}}>
                                         {repo.tecnologias.join(", ")}
