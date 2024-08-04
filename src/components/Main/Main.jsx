@@ -181,7 +181,7 @@ function Main() {
 
     return (
         
-        <main className={`main ${theme ? 'light' : ''}`}>
+        <main className={`main light`}>
             <section id="sobre_mim">
                     {/* texto */}
                     <div>

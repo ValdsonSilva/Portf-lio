@@ -915,8 +915,13 @@ section {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
-        /* background-color: rgb(109, 7, 7); */
+        background-color: rgb(109, 7, 7);
+        background: none;
         /* column-gap: -20px; */
+    }
+
+    .light {
+        background-image: none;
     }
 
     ::-webkit-scrollbar {
@@ -1100,19 +1105,19 @@ section {
 
 }
 
-@media only screen and (min-width: 375px) and (max-width: 732px){
+@media only screen and (min-width: 375px) and (max-width: 732px) {
+
     #sobre_mim {
-        margin-top: 50px;
+        /* margin-top: 50px; */
         padding-bottom: 10px;
         display:flex;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
-        gap: 17px;
+        /* gap: 17px; */
         /* background-color: rgb(109, 7, 7); */
-
     }
-
+    
     ::-webkit-scrollbar {
         display: none;
     }
@@ -1148,6 +1153,7 @@ section {
         justify-content: space-around;
         flex-direction: column;
         align-items: center;
+        /* width: 100%; */
     }
 
     #sobre_mim div nav{
@@ -1177,6 +1183,24 @@ section {
         border-radius: 50%;
         box-shadow: none;
         background-color: none;
+    }
+
+    #sobre img {
+        display: none;
+    }
+
+    #sobre > div {
+        display: flex;
+        /* background-color: pink; */
+        flex-direction: column;
+        padding: 30px;
+        /* height: 300px; */
+    }
+
+    #sobre div > p {
+        font-size: 12px;
+        line-height: 20px;
+        text-align: justify;
     }
 
     .foto {
@@ -1238,7 +1262,7 @@ section {
         display: none;
     }
 
-    #tecnologias h1, #projetos h1 {
+    #tecnologias h1, #projetos h1, #sobre h1 {
         font-size: x-large;
         font-weight: 800;
         font-size: 35px;
@@ -1251,4 +1275,15 @@ section {
         width: 20em;
     }
 
+}
+
+@media only screen and (max-width: 375px) and (max-height: 852px) {
+    
+    #sobre_mim {
+        background-color: blueviolet;
+    }
+    
+    .light {
+        background-image: none;
+    }
 }
