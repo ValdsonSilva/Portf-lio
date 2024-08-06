@@ -915,13 +915,9 @@ section {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
-        background-color: rgb(109, 7, 7);
+        /* background-color: rgb(109, 7, 7); */
         background: none;
         /* column-gap: -20px; */
-    }
-
-    .light {
-        background-image: none;
     }
 
     ::-webkit-scrollbar {
@@ -1039,7 +1035,7 @@ section {
     }
 
     #projetos {
-        /* padding-top: 90px; */
+        padding-top: 90px;
         padding-bottom: 10px;
     }
     
@@ -1078,23 +1074,29 @@ section {
         width: 20em;
     }
 
-    #sobre > div {
-        display: none;
+    #sobre {
+        display: block;
     }
 
     #sobre .fundo1, 
     #sobre .fundo2, 
-    #sobre .fundo3, 
-    #sobre .FotoContainer, 
-    #sobre .fotoPessoal {
+    #sobre .fundo3 {
         display: none;
+    }
+
+    #sobre img {
+        /* display: none; */
+        width: 200px;
+        height: 300px;
+        margin: 0px;
     }
 
     #sobre > div {
         display: flex;
         /* background-color: pink; */
         flex-direction: column;
-        padding: 30px;
+        margin: 20px;
+        gap: 50px;
     }
 
     #sobre div > p {
@@ -1144,8 +1146,10 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 22vh; 
+        /* height: 22vh;  */
         text-align: justify;
+        margin: 20px;
+        /* background-color: yellow; */
     }
 
     #sobre_mim div {
@@ -1185,16 +1189,28 @@ section {
         background-color: none;
     }
 
+    #sobre {
+        display: flexp;
+        padding-top: 100px;
+        /* display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0px; */
+    }
+
     #sobre img {
-        display: none;
+        /* display: none; */
+        width: 200px;
+        height: 300px;
+        margin: 0px;
     }
 
     #sobre > div {
         display: flex;
         /* background-color: pink; */
         flex-direction: column;
-        padding: 30px;
-        /* height: 300px; */
+        margin: 20px;
+        gap: 50px;
     }
 
     #sobre div > p {
@@ -1210,7 +1226,7 @@ section {
     }
 
     #tecnologias {
-        /* padding-top: 100px; */
+        padding-top: 100px;
         padding-bottom: 30px;
         margin-bottom: 10px;
         display: flex;
