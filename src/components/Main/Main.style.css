@@ -175,10 +175,10 @@ section {
     widthy: 25%;
 } */
 
-.container {
+#sobre_mim > .container {
     position: relative;
-    width: 600px;
-    height: 500px;
+    width: 80%;
+    /* height: 500px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1108,6 +1108,10 @@ section {
 }
 
 @media only screen and (min-width: 375px) and (max-width: 732px) {
+/* 
+    .light {
+        background-image: url("../../assets/fundo.jpg");
+    } */
 
     #sobre_mim {
         /* margin-top: 50px; */
@@ -1299,7 +1303,7 @@ section {
         background-color: blueviolet;
     }
     
-    .light {
+    /* .light {
         background-image: none;
-    }
+    } */
 }
