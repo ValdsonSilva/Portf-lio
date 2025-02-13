@@ -197,7 +197,7 @@ function Main() {
                             </p>
                         </div>
 
-                        {/* email - github - linkedin */}
+                        {/* github - linkedin */}
                         <nav>
                             <li>
                                 <a href="https://www.linkedin.com/in/valdson-mac%C3%AAdo-35981426b/">
@@ -211,13 +211,6 @@ function Main() {
                                     <FaGithub size={50} aria-label="ícone do github"/>
                                 </a>
                                 <p>Github</p>
-                            </li>
-                            
-                            <li>
-                                <a href="https://is.gd/ySE8mH">
-                                    <MdEmail size={50} aria-label="ícone do email"/>
-                                </a>
-                                <p>Email</p>
                             </li>
                         </nav>
                     </div>
@@ -245,15 +238,6 @@ function Main() {
                         Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e facilidade em trabalhar em equipes.
                     </p>
                     
-                    {/* <div className="f" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
-                        <div className="" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
-                            <div className="f" style={{backgroundColor: theme ? "#F57D1F" : "#fff"}}>
-                                <figure className="FotoContainer">
-                                    <img className="fotoPessoal" src={foto} style={{borderRadius: "100%"}} alt="Foto pessoal sorrindo" />
-                                </figure>
-                            </div>
-                        </div>
-                    </div> */}
                     <figure className="FotoContainer">
                         <img className="fotoPessoal" src={foto} alt="Foto pessoal sorrindo" />
                     </figure>
