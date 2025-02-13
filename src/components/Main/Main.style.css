@@ -193,24 +193,6 @@ section {
     z-index: 0;
 }
 
-/* .container i:nth-child(1) {
-    border-radius: 45% 55% 43% 57% / 30% 34% 66% 70% ;
-    border: 4px solid;
-    animation: animar 8s linear infinite;
-}
-
-.container i:nth-child(2) {
-    border-radius: 21% 79% 72% 28% / 21% 26% 74% 79% ;
-    border: 4px solid;
-    animation: animar 6s linear infinite;
-}
-
-.container i:nth-child(3) {
-    border-radius: 77% 23% 39% 61% / 34% 24% 76% 66% ;
-    border: 4px solid;
-    animation: animar 12s linear infinite;
-} */
-
 @keyframes animar {
     0% {
         transform: rotate(0deg);
@@ -289,13 +271,8 @@ section {
 }
 
 .FotoContainer {
-    /* background-color: #fff; */
-    /* padding: 5%; */
     width: auto;
     height: auto;
-    /* background-color: red; */
-    /* border-radius: 45% 55% 43% 57% / 30% 34% 66% 70% ; */
-    /* box-shadow: 1px 1px 20px 5px #000; */
 }
 
 @keyframes rotate {
@@ -310,10 +287,9 @@ section {
 
 .fotoPessoal {
     display: block;
-    /* z-index: 2;  */
     box-shadow: 1px 1px 5px 5px #000;
-    width: 430px;
-    height: 700px;
+    width: 300px;
+    height: 400px;
     border-radius: 20px;
     margin-bottom: 120px;
 }

@@ -247,7 +247,8 @@ function Main() {
                     <p style={{color: '#000'}}>
                         Desenvolvedor apaixonado pelo universo do <span style={{color: "#058ea9"}}>Front-end</span>.
                         Atualmente estou em formação pela Instituto Federal de Educação Ciência e Tecnologia do Piauí. 
-                        Possuo domínio em <span style={{color: "#058ea9"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como <span style={{color: "#058ea9"}}>React.js, Next, React Native e Django</span>.  
+                        Possuo domínio em <span style={{color: "#058ea9"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como 
+                         <span style={{color: "#058ea9"}}> React.js, Node.js, Express, Prisma e MongoDb</span>.  
                         Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e facilidade em trabalhar em equipes.
                     </p>
                     
