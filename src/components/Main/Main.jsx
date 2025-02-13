@@ -2,8 +2,9 @@
 
 import "./Main.style.css"
 import foto from "../../assets/foto_forte.jpg"
-import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython} from 'react-icons/fa';
-import {MdEmail, MdJavascript} from "react-icons/md"
+import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython, FaNodeJs} from 'react-icons/fa';
+import {MdJavascript} from "react-icons/md"
+import {SiMongodb, SiTailwindcss, SiPrisma, SiExpress, SiVite} from "react-icons/si"
 import django from "../../assets/Django-icon.svg"
 import { ThemeContext } from "../context/LinghtDarkContext";
 import { useContext, useEffect, useRef, useState} from "react";
@@ -72,31 +73,43 @@ function Main() {
     const tecnologias = [
         {
             stack : "React.js",
-            image : <FaReact size={300} aria-label="Logo do react.js"/>
+            image : <FaReact size={100} aria-label="Logo do react.js"/>
         }, 
         {
+            stack : 'Vite',
+            image : <SiVite size={100} aria-label="Logo do Vite"/>
+        },
+        {
             stack : 'Javascript',
-            image : <MdJavascript size={300} aria-label="Logo do Javascript"/>
-        },
-        {
-            stack : 'Django',
-            image : <img src={django} 
-                         alt="logo do django" 
-                         width={200} 
-                         height={200}
-                    />
-        },
-        {
-            stack : 'Python',
-            image : <FaPython size={300} aria-label="Logo do Python"/>
+            image : <MdJavascript size={100} aria-label="Logo do Javascript"/>
         },
         {
             stack : 'HTML',
-            image : <FaHtml5 size={300} aria-label="Logo do html"/>
+            image : <FaHtml5 size={100} aria-label="Logo do html"/>
         },
         {
             stack : 'CSS',
-            image : <FaCss3 size={300} aria-label="Logo do css"/>
+            image : <FaCss3 size={100} aria-label="Logo do css"/>
+        },
+        {
+            stack : 'Tailwind CSS',
+            image : <SiTailwindcss size={100} aria-label="Logo do Tailwind CSS"/>
+        },
+        {
+            stack : 'Node.js',
+            image : <FaNodeJs size={100} aria-label="Logo do Node js"/>
+        },
+        {
+            stack : 'Express js',
+            image : <SiExpress size={100} aria-label="Logo do Express js"/>
+        },
+        {
+            stack : 'MongoDb',
+            image : <SiMongodb size={100} aria-label="Logo do MongoDb"/>
+        },
+        {
+            stack : 'Prisma ORM',
+            image : <SiPrisma size={100} aria-label="Logo do Prisma ORM"/>
         }
     ]
 
@@ -250,7 +263,7 @@ function Main() {
                     {tecnologias.map((tech) => (
                         <div key={tech.id} className="carts_child">
                             {tech.image}
-                            <h1 key={tech.id} style={{color: theme ? "#F57D1F" : "#000"}}>{tech.stack}</h1>
+                            {/* <h1 key={tech.id} style={{color: theme ? "#F57D1F" : "#000"}}>{tech.stack}</h1> */}
                         </div>
                     ))}
                 </div>
