@@ -1,6 +1,6 @@
 import "./Main.style.css"
 import foto from "../../assets/foto_forte.jpg"
-import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython, FaNodeJs, FaCheck, FaShare, FaShareAlt, FaArrowLeft, FaArrowRight, FaArrowsAlt, FaLink} from 'react-icons/fa';
+import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaNodeJs} from 'react-icons/fa';
 import {MdJavascript} from "react-icons/md"
 import {SiMongodb, SiTailwindcss, SiPrisma, SiExpress, SiVite} from "react-icons/si"
 import {FiExternalLink} from "react-icons/fi"
@@ -12,6 +12,8 @@ import foto_pessoal from "../../assets/foto_pessoal.png"
 import caistech from "../../assets/Caistech.jpg"
 import cef from "../../assets/CefFloriano.png"
 import soticon from "../../assets/soticon.png"
+import soticonImg from "../../assets/expe/soticon.png"
+import cefImg from "../../assets/expe/cef.png"
 
 
 
@@ -120,6 +122,21 @@ function Main() {
             stack : 'Prisma ORM',
             image : <SiPrisma size={100} aria-label="Logo do Prisma ORM"/>
         }
+    ]
+
+    const experiencias = [
+        {
+            img : soticonImg,
+            duracao : "2023 - 2024 . 2 anos",
+            cargo : "Desenvolvedor Front-end - IFPI",
+            desc : "Tecnologias: HTML, CSS, JavaScript."
+        },
+        {
+            img : cefImg,
+            duracao : "2024 . 5 meses",
+            cargo : "Desenvolvedor Front-end - Centro Educacional de Floriano (CEF)",
+            desc : "Tecnologias: Next.js, JS, Tailwind, Mui Material, Django."
+        },
     ]
 
     const {theme} = useContext(ThemeContext)
@@ -263,15 +280,20 @@ function Main() {
                 </div>
             </section>
 
-            <section id="tecnologias">
-                <h1 style={{color: theme ? "#000" : ""}}>Tecnologias</h1>
-                <div className="carts_father">
-                    {tecnologias.map((tech) => (
-                        <div key={tech.id} className="carts_child">
-                            {tech.image}
+            <section id="experiencias">
+                <h1>Experiências</h1>
+                {experiencias.map((exp) => (
+                    <div className="caixa_exp">
+                        <figure>
+                            <img src={exp.img} alt="Imagem da empresa onde atuei" />
+                        </figure>
+                        <div>
+                            <p>{exp.duracao}</p>
+                            <h1>{exp.cargo}</h1>
+                            <h3>{exp.desc}</h3>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </section>
 
             <section id="projetos">
@@ -279,13 +301,13 @@ function Main() {
                 <div className="carts_projects_father">
                     {repositorios.map((repo, index) => (
                         <div className={index % 2 === 0 ? 'row' : 'reverse'} id="cardProject">  
-                            <div href={repo.link}>
+                            <div>
                                 <figure className="carts_projects_child">
                                     <img src={repo.fundo}></img>
                                 </figure>
                             </div>
                             <a href={repo.link} className="overlay">
-                                <h1 id="projetos_title" style={{fontSize: "2em", color:"#F57D1F", textAlign:"center"}}>{repo.nome}</h1>
+                                <h1 id="projetos_title" style={{fontSize: "2em", color:`var(--secondary-color)`, textAlign:"center"}}>{repo.nome}</h1>
                                 <p>
                                     {repo.alternativo}
                                     <span style={{color:"#F57D1F"}}>
@@ -296,6 +318,17 @@ function Main() {
                                     <FiExternalLink/>
                                 </div>
                             </a>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section id="tecnologias">
+                <h1 style={{color: theme ? "#000" : ""}}>Tecnologias</h1>
+                <div className="carts_father">
+                    {tecnologias.map((tech) => (
+                        <div key={tech.id} className="carts_child">
+                            {tech.image}
                         </div>
                     ))}
                 </div>

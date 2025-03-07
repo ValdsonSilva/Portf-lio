@@ -23,7 +23,7 @@ function Footer() {
     return (
         <>
              <footer style={{
-            backgroundColor: "#fff",
+            backgroundColor: "#ececec",
             width: "100%",
             height: "5em",
             display: "flex",
