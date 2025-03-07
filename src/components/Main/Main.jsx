@@ -1,11 +1,9 @@
-'use client';
-
 import "./Main.style.css"
 import foto from "../../assets/foto_forte.jpg"
-import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython, FaNodeJs} from 'react-icons/fa';
+import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaPython, FaNodeJs, FaCheck, FaShare, FaShareAlt, FaArrowLeft, FaArrowRight, FaArrowsAlt, FaLink} from 'react-icons/fa';
 import {MdJavascript} from "react-icons/md"
 import {SiMongodb, SiTailwindcss, SiPrisma, SiExpress, SiVite} from "react-icons/si"
-import django from "../../assets/Django-icon.svg"
+import {FiExternalLink} from "react-icons/fi"
 import { ThemeContext } from "../context/LinghtDarkContext";
 import { useContext, useEffect, useRef, useState} from "react";
 import balletbot from "../../assets/balletbot.png"
@@ -13,28 +11,39 @@ import quiz from "../../assets/quiz.png"
 import foto_pessoal from "../../assets/foto_pessoal.png"
 import caistech from "../../assets/Caistech.jpg"
 import cef from "../../assets/CefFloriano.png"
+import soticon from "../../assets/soticon.png"
 
 
 
 function Main() {
     const [loaded, setLoaded] = useState(false)
     // lista de imagens de fundo dos projetos
-    const projectsBackImages = [ cef, caistech, balletbot, quiz, ]
+    const projectsBackImages = [ cef, caistech, balletbot, quiz, soticon]
 
     // retorno da API do github
     const repositorios = [
         {
+            nome: "SOTICON",
+            stacks:"HTML,CSS,JS" ,
+            link: "https://front-soticon.vercel.app/",
+            alternativo : `Um sistema voltado para a solicitação de tickets do ônibus 
+                           escolar do IFPI campus Floriano onde fui o responsável por 
+                           toda o desenvolvimento do Front-end desse projeto tendo a oportunidade
+                           de me adaptar bastante ao uso do Vanilla Js (js Puro). `,
+            tecnologias: ["HTML", "CSS", "JS"],
+            fundo : projectsBackImages[4]
+        },
+        {
             nome: "CEF Floriano",
             stacks:"HTML,CSS,JS" ,
             link: "https://cefedu.com.br/",
-            alternativo : `Projeto freelancer de um site institucional do CEF Floriano-Pi.
-                           O CEF é uma instituição de ensino que contou comigo e mais 4 colegas 
+            alternativo : `O CEF é uma instituição de ensino que contou comigo e mais 4 colegas 
                            para que fosse desenvolvida essa plataforma única para o nosso cliente, contando 
                            com diversas funcionalidades, a plataforma se asemelha bastante ao Google Class, 
                            porém, conta com as particularidades que o cliente pediu, como
                            módulos voltados para o gerenciamento de concursos públicos realizados pelo CEF.
                            Essa plataforma foi feita com `,
-            tecnologias: ["Next.js", "CSS", "Tailwind", "Mui Material", "Django."],
+            tecnologias: ["Next.js","JS", "Tailwind", "Mui Material", "Django."],
             fundo : projectsBackImages[0]
         },
         {
@@ -229,10 +238,6 @@ function Main() {
                     </div>
 
                     <div className="container">
-                        {/* <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
-                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i>
-                        <i style={{color: theme ? "#fff" : "#F57D1F"}}></i> */}
-
                         <figure>
                             <img src={foto_pessoal} alt='minha foto' className="foto" style={{borderColor: theme ? "#fff" : "#F57D1F"}}/>
                         </figure>
@@ -264,7 +269,6 @@ function Main() {
                     {tecnologias.map((tech) => (
                         <div key={tech.id} className="carts_child">
                             {tech.image}
-                            {/* <h1 key={tech.id} style={{color: theme ? "#F57D1F" : "#000"}}>{tech.stack}</h1> */}
                         </div>
                     ))}
                 </div>
@@ -274,21 +278,24 @@ function Main() {
                 <h1 style={{color: theme ? "#000" : ""}}>Projetos</h1>
                 <div className="carts_projects_father">
                     {repositorios.map((repo, index) => (
-                        <div key={repo.nome} className={index % 2 === 0 ? 'row' : 'reverse'}>  
-                            <a href={repo.link}>
+                        <div className={index % 2 === 0 ? 'row' : 'reverse'} id="cardProject">  
+                            <div href={repo.link}>
                                 <figure className="carts_projects_child">
                                     <img src={repo.fundo}></img>
                                 </figure>
-                            </a>
-                            <div>
-                                <h1 id="projetos_title" style={{fontSize: "3em", color: theme ? '#F57D1F' : '#F57D1F'}}>{repo.nome}</h1>
-                                <p style={{color: "#000", lineHeight: 1.5, textAlign: "justify"}}>
+                            </div>
+                            <a href={repo.link} className="overlay">
+                                <h1 id="projetos_title" style={{fontSize: "2em", color:"#F57D1F", textAlign:"center"}}>{repo.nome}</h1>
+                                <p>
                                     {repo.alternativo}
-                                    <span style={{color: "#058ea9"}}>
+                                    <span style={{color:"#F57D1F"}}>
                                         {repo.tecnologias.join(", ")}
                                     </span>
                                 </p>
-                            </div>
+                                <div className="link">
+                                    <FiExternalLink/>
+                                </div>
+                            </a>
                         </div>
                     ))}
                 </div>

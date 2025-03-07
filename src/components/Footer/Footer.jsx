@@ -38,7 +38,6 @@ function Footer() {
                     position: "fixed",
                     bottom: "20px",
                     right: "20px",
-                    // backgroundColor: "red"
                 }}>
                     <p style={{
                         display: "flex",
@@ -51,7 +50,7 @@ function Footer() {
                         height: "60px",
                         backgroundColor: "#fff",
                         border: "2px solid #F57D1F",
-                        borderRadius: "50%",
+                        borderRadius: "20%",
                         cursor: "pointer"
                     }}>
                         <FaArrowUp />

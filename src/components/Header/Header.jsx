@@ -42,7 +42,7 @@ function Header() {
             <li><a href="#sobre">Sobre mim</a></li>
             <li><a href="#tecnologias">Tecnologias</a></li>
             <li><a href="#projetos">Projetos</a></li>
-            <li><a style={{border:"2px solid #000"}} href='/cv.pdf' download={"/cv.pdf"}>Baixar CV</a></li>
+            {/* <li><a style={{border:"2px solid #000"}} href='/cv.pdf' download={"/cv.pdf"}>Baixar CV</a></li> */}
             {/* <button onClick={handleTheme} className={`botao ${toggleState ? 'open' : ''}`}>
                 {theme ? <FaMoon size={25}/> : <FaSun size={25}/>}
             </button> */}
