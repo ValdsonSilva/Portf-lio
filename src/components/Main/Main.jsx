@@ -14,13 +14,14 @@ import cef from "../../assets/CefFloriano.png"
 import soticon from "../../assets/soticon.png"
 import soticonImg from "../../assets/expe/soticon.png"
 import cefImg from "../../assets/expe/cef.png"
+import apiImg from "../../assets/api.png"
 
 
 
 function Main() {
     const [loaded, setLoaded] = useState(false)
     // lista de imagens de fundo dos projetos
-    const projectsBackImages = [ cef, caistech, balletbot, quiz, soticon]
+    const projectsBackImages = [ cef, caistech, balletbot, quiz, soticon, apiImg]
 
     // retorno da API do github
     const repositorios = [
@@ -57,6 +58,16 @@ function Main() {
                            eu e mais 2 colegas construimos essa UI magnifica do jeito que o nosso evento merece utilizando `,
             tecnologias: ["HTML", "CSS", "JavaScript."],
             fundo : projectsBackImages[1]
+        },
+        {
+            nome: "UlcerAid Node API",
+            stacks:"HTML,CSS,JS" ,
+            link: "https://github.com/ValdsonSilva/UlcerAid_api_node",
+            alternativo : `Esse é um projeto pessoal de estudo onde construi essa rest API na arquitetura MVC, que é responsável
+                           pelo gerenciamento de um sistema web de classificalção de imagens
+                           de pés diabéticos com úlceras usando deep learning. Ela foi feita com `,
+            tecnologias: ["Node", "Express", "Prisma", "MongoDB."],
+            fundo : projectsBackImages[5]
         },
         {
             nome: "Ballet Bot",
@@ -271,7 +282,8 @@ function Main() {
                         Atualmente estou em formação pela Instituto Federal de Educação Ciência e Tecnologia do Piauí. 
                         Possuo domínio em <span style={{color: "#058ea9"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como 
                          <span style={{color: "#058ea9"}}> React.js, Node.js, Express, Prisma e MongoDb</span>.  
-                        Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e facilidade em trabalhar em equipes.
+                        Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e com 
+                        facilidade em trabalhar em equipes.
                     </p>
                     
                     <figure className="FotoContainer">
