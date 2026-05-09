@@ -1,353 +1,290 @@
-import "./Main.style.css"
-import foto from "../../assets/foto_forte.jpg"
-import {FaLinkedin, FaGithub, FaReact, FaCss3, FaHtml5, FaNodeJs} from 'react-icons/fa';
-import {MdJavascript} from "react-icons/md"
-import {SiMongodb, SiTailwindcss, SiPrisma, SiExpress, SiVite} from "react-icons/si"
-import {FiExternalLink} from "react-icons/fi"
-import { ThemeContext } from "../context/LinghtDarkContext";
-import { useContext, useEffect, useRef, useState} from "react";
-import balletbot from "../../assets/balletbot.png"
-import quiz from "../../assets/quiz.png"
-import foto_pessoal from "../../assets/foto_pessoal.png"
-import caistech from "../../assets/Caistech.jpg"
-import cef from "../../assets/CefFloriano.png"
-import soticon from "../../assets/soticon.png"
-import soticonImg from "../../assets/expe/soticon.png"
-import cefImg from "../../assets/expe/cef.png"
-import apiImg from "../../assets/api.png"
-
-
+import './Main.style.css'
+import foto from '../../assets/foto_forte.jpg'
+import fotoPessoal from '../../assets/foto_pessoal.png'
+import balletbot from '../../assets/balletbot.png'
+import quiz from '../../assets/quiz.png'
+import caistech from '../../assets/Caistech.jpg'
+import cef from '../../assets/CefFloriano.png'
+import soticon from '../../assets/soticon.png'
+import soticonImg from '../../assets/expe/soticon.png'
+import cefImg from '../../assets/expe/cef.png'
+import apiImg from '../../assets/api.png'
+import grproImg from "../../assets/expe/grpro.png"
+import {
+  FaLinkedin,
+  FaGithub,
+  FaReact,
+  FaCss3,
+  FaHtml5,
+  FaNodeJs,
+  FaBriefcase,
+} from 'react-icons/fa'
+import { MdJavascript } from 'react-icons/md'
+import {
+  SiTailwindcss,
+  SiPrisma,
+  SiExpress,
+  SiVite,
+  SiTypescript,
+  SiPostgresql,
+} from 'react-icons/si'
+import { FiExternalLink } from 'react-icons/fi'
 
 function Main() {
-    const [loaded, setLoaded] = useState(false)
-    // lista de imagens de fundo dos projetos
-    const projectsBackImages = [ cef, caistech, balletbot, quiz, soticon, apiImg]
+  const repositorios = [
+    {
+      nome: 'SOTICON',
+      link: 'https://front-soticon.vercel.app/',
+      alternativo:
+        'Sistema voltado para a solicitação de tickets do ônibus escolar do IFPI Campus Floriano. Atuei no desenvolvimento da interface e na construção da experiência do usuário utilizando ',
+      tecnologias: ['HTML', 'CSS', 'JavaScript'],
+      fundo: soticon,
+    },
+    {
+      nome: 'CEF Floriano',
+      link: 'https://cefedu.com.br/',
+      alternativo:
+        'Plataforma educacional desenvolvida em equipe para uma instituição de ensino, com recursos para gerenciamento de aulas, usuários e concursos públicos. O projeto foi desenvolvido com ',
+      tecnologias: ['Next.js', 'JavaScript', 'Tailwind CSS', 'Material UI', 'Django'],
+      fundo: cef,
+    },
+    {
+      nome: 'CaisTech 2024',
+      link: 'https://valdson-silva-cais-tech24.vercel.app/',
+      alternativo:
+        'Projeto voluntário para o site oficial de um evento institucional de tecnologia do Sul do Piauí. Participei da criação da interface e da implementação visual usando ',
+      tecnologias: ['HTML', 'CSS', 'JavaScript'],
+      fundo: caistech,
+    },
+    {
+      nome: 'UlcerAid Node API',
+      link: 'https://github.com/ValdsonSilva/UlcerAid_api_node',
+      alternativo:
+        'API REST construída em arquitetura MVC para dar suporte a um sistema web de classificação de imagens de pés diabéticos com úlceras. A aplicação foi desenvolvida com ',
+      tecnologias: ['Node.js', 'Express', 'Prisma'],
+      fundo: apiImg,
+    },
+    {
+      nome: 'Ballet Bot',
+      link: 'https://desafio-ballet-bot.vercel.app/',
+      alternativo:
+        'Landing page desenvolvida a partir de um layout disponibilizado no Figma, com foco em fidelidade visual, estruturação de componentes e responsividade usando ',
+      tecnologias: ['HTML', 'CSS', 'JavaScript'],
+      fundo: balletbot,
+    },
+    {
+      nome: 'Quiz JavaScript',
+      link: 'https://quizjavascript.vercel.app/',
+      alternativo:
+        'Jogo de perguntas técnicas sobre JavaScript criado para testar conhecimentos de programação. Foi meu primeiro projeto em React e utiliza hooks, controle de estado e contexto com ',
+      tecnologias: ['React.js', 'JavaScript', 'Context API'],
+      fundo: quiz,
+    },
+  ]
 
-    // retorno da API do github
-    const repositorios = [
-        {
-            nome: "SOTICON",
-            stacks:"HTML,CSS,JS" ,
-            link: "https://front-soticon.vercel.app/",
-            alternativo : `Um sistema voltado para a solicitação de tickets do ônibus 
-                           escolar do IFPI campus Floriano onde fui o responsável por 
-                           toda o desenvolvimento do Front-end desse projeto tendo a oportunidade
-                           de me adaptar bastante ao uso do Vanilla Js (js Puro). `,
-            tecnologias: ["HTML", "CSS", "JS"],
-            fundo : projectsBackImages[4]
-        },
-        {
-            nome: "CEF Floriano",
-            stacks:"HTML,CSS,JS" ,
-            link: "https://cefedu.com.br/",
-            alternativo : `O CEF é uma instituição de ensino que contou comigo e mais 4 colegas 
-                           para que fosse desenvolvida essa plataforma única para o nosso cliente, contando 
-                           com diversas funcionalidades, a plataforma se asemelha bastante ao Google Class, 
-                           porém, conta com as particularidades que o cliente pediu, como
-                           módulos voltados para o gerenciamento de concursos públicos realizados pelo CEF.
-                           Essa plataforma foi feita com `,
-            tecnologias: ["Next.js","JS", "Tailwind", "Mui Material", "Django."],
-            fundo : projectsBackImages[0]
-        },
-        {
-            nome: "CaisTech 2024",
-            stacks:"HTML,CSS,JS" ,
-            link: "https://valdson-silva-cais-tech24.vercel.app/",
-            alternativo : `Projeto voluntário de construção de site para um evento institucional da universidade.
-                           O evento é chamado CaisTech que se tratar do maior evento de tecnologia do Sul do Piauí,
-                           eu e mais 2 colegas construimos essa UI magnifica do jeito que o nosso evento merece utilizando `,
-            tecnologias: ["HTML", "CSS", "JavaScript."],
-            fundo : projectsBackImages[1]
-        },
-        {
-            nome: "UlcerAid Node API",
-            stacks:"HTML,CSS,JS" ,
-            link: "https://github.com/ValdsonSilva/UlcerAid_api_node",
-            alternativo : `Esse é um projeto pessoal de estudo onde construi essa rest API na arquitetura MVC, que é responsável
-                           pelo gerenciamento de um sistema web de classificalção de imagens
-                           de pés diabéticos com úlceras usando deep learning. Ela foi feita com `,
-            tecnologias: ["Node", "Express", "Prisma", "MongoDB."],
-            fundo : projectsBackImages[5]
-        },
-        {
-            nome: "Ballet Bot",
-            stacks:"HTML,CSS,JS" ,
-            link: "https://desafio-ballet-bot.vercel.app/",
-            alternativo : `Desafio de reproduzir layout disponibilizado no fígma de uma 
-                           landin page do Ballet Bot. Nesse site estou utilizando as tecnologias
-                           básicas de front-end como `,
-            tecnologias: ["HTML", "CSS", "JavaScript."],
-            fundo : projectsBackImages[2]
-        },
-        {
-           nome: "Quiz Javascript",
-           stacks:"React.js",
-           link: "https://quizjavascript.vercel.app/",
-           alternativo : `Jogo de perguntas técnicas de Javascript para testar o conhecimento do usuário.
-                          Esse quiz se trata do meu primeiro projeto em React, nele faço uso de alguns hooks
-                          como useState, useEffect e o código também conta com o gerenciamento de estados globais
-                          no contexto do jogo.`,
-            tecnologias: [""],
-           fundo : projectsBackImages[3]
-        },
-    ]
+  const tecnologias = [
+    {
+      stack: 'React.js',
+      image: <FaReact aria-hidden="true" />,
+    },
+    {
+      stack: 'TypeScript',
+      image: <SiTypescript aria-hidden="true" />,
+    },
+    {
+      stack: 'Vite',
+      image: <SiVite aria-hidden="true" />,
+    },
+    {
+      stack: 'JavaScript',
+      image: <MdJavascript aria-hidden="true" />,
+    },
+    {
+      stack: 'HTML',
+      image: <FaHtml5 aria-hidden="true" />,
+    },
+    {
+      stack: 'CSS',
+      image: <FaCss3 aria-hidden="true" />,
+    },
+    {
+      stack: 'Tailwind CSS',
+      image: <SiTailwindcss aria-hidden="true" />,
+    },
+    {
+      stack: 'Node.js',
+      image: <FaNodeJs aria-hidden="true" />,
+    },
+    {
+      stack: 'Express.js',
+      image: <SiExpress aria-hidden="true" />,
+    },
+    {
+      stack: 'Prisma ORM',
+      image: <SiPrisma aria-hidden="true" />,
+    },
+    {
+      stack: 'PostgreSQL',
+      image: <SiPostgresql aria-hidden="true" />,
+    },
+  ]
 
-    const tecnologias = [
-        {
-            stack : "React.js",
-            image : <FaReact size={100} aria-label="Logo do react.js"/>
-        }, 
-        {
-            stack : 'Vite',
-            image : <SiVite size={100} aria-label="Logo do Vite"/>
-        },
-        {
-            stack : 'Javascript',
-            image : <MdJavascript size={100} aria-label="Logo do Javascript"/>
-        },
-        {
-            stack : 'HTML',
-            image : <FaHtml5 size={100} aria-label="Logo do html"/>
-        },
-        {
-            stack : 'CSS',
-            image : <FaCss3 size={100} aria-label="Logo do css"/>
-        },
-        {
-            stack : 'Tailwind CSS',
-            image : <SiTailwindcss size={100} aria-label="Logo do Tailwind CSS"/>
-        },
-        {
-            stack : 'Node.js',
-            image : <FaNodeJs size={100} aria-label="Logo do Node js"/>
-        },
-        {
-            stack : 'Express js',
-            image : <SiExpress size={100} aria-label="Logo do Express js"/>
-        },
-        {
-            stack : 'MongoDb',
-            image : <SiMongodb size={100} aria-label="Logo do MongoDb"/>
-        },
-        {
-            stack : 'Prisma ORM',
-            image : <SiPrisma size={100} aria-label="Logo do Prisma ORM"/>
-        }
-    ]
+  const experiencias = [
+    {
+      id: 'grpro',
+      img: grproImg,
+      duracao: 'jun de 2025 - o momento · 1 ano',
+      cargo: 'Desenvolvedor de Software Full Stack',
+      empresa: 'GrPro.Solution · Tempo integral',
+      local: 'Floriano, Piauí, Brasil · No local',
+      desc: 'Atuação no desenvolvimento e manutenção de soluções web, trabalhando em funcionalidades de front-end e back-end com foco em qualidade, usabilidade e evolução contínua do produto.',
+    },
+    {
+      id: 'soticon',
+      img: soticonImg,
+      duracao: '2023 - 2024 · 2 anos',
+      cargo: 'Desenvolvedor Front-End - IFPI',
+      empresa: 'Projeto institucional',
+      desc: 'Tecnologias: HTML, CSS e JavaScript.',
+    },
+    {
+      id: 'cef',
+      img: cefImg,
+      duracao: '2024 · 5 meses',
+      cargo: 'Desenvolvedor Front-End - Centro Educacional de Floriano (CEF)',
+      empresa: 'Projeto para cliente',
+      desc: 'Tecnologias: Next.js, JavaScript, Tailwind CSS, Material UI e Django.',
+    },
+  ]
 
-    const experiencias = [
-        {
-            img : soticonImg,
-            duracao : "2023 - 2024 . 2 anos",
-            cargo : "Desenvolvedor Front-end - IFPI",
-            desc : "Tecnologias: HTML, CSS, JavaScript."
-        },
-        {
-            img : cefImg,
-            duracao : "2024 . 5 meses",
-            cargo : "Desenvolvedor Front-end - Centro Educacional de Floriano (CEF)",
-            desc : "Tecnologias: Next.js, JS, Tailwind, Mui Material, Django."
-        },
-    ]
+  return (
+    <main className="main">
+      <section id="sobre_mim" className="hero section-shell">
+        <div className="hero-content">
+          <p className="hero-eyebrow">Portfólio profissional</p>
+          <h1>Valdson Silva</h1>
+          <h2>Desenvolvedor Full Stack</h2>
+          <p className="hero-description">
+            Crio soluções web completas, conectando interfaces modernas, APIs bem estruturadas e experiências digitais eficientes.
+          </p>
 
-    const {theme} = useContext(ThemeContext)
+          <nav className="social-links" aria-label="Redes sociais">
+            <a
+              href="https://www.linkedin.com/in/valdson-mac%C3%AAdo-35981426b/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Acessar LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
 
-    // Identificar o clique no menu
-    // Verificar o item que foi clicado e fazer referência com o alvo
-    // Verificar a distância entre o alvo e o topo
-    // Animar o scroll até o alvo
+            <a
+              href="https://github.com/ValdsonSilva"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Acessar GitHub"
+            >
+              <FaGithub />
+            </a>
+          </nav>
+        </div>
 
-    // passando o hook useRef nulo
-    const menuItemsRef = useRef(null);
+        <figure className="hero-photo-wrapper">
+          <img src={fotoPessoal} alt="Valdson Silva" className="hero-photo" />
+        </figure>
+      </section>
 
-    useEffect(() => {
-        // acesso ao elemento do DOM
-        menuItemsRef.current = document.querySelectorAll('.navegacao a[href^="#"]');
+      <section id="sobre" className="about section-shell">
+        <div className="section-heading">
+          <span>Sobre mim</span>
+          <h2>Formação, experiência e foco em soluções completas</h2>
+        </div>
 
-        console.log(menuItemsRef.current)
+        <div className="about-grid">
+          <figure className="about-photo-wrapper">
+            <img className="about-photo" src={foto} alt="Valdson Silva sorrindo" />
+          </figure>
 
-        // Identificar o clique no menu
-        menuItemsRef.current.forEach(item => {
-            item.addEventListener('click', scrollToIdOnClick);
-        })
+          <div className="about-card">
+            <p>
+              Sou Desenvolvedor Full Stack, formado em Análise e Desenvolvimento de Sistemas (TADS) pelo Instituto Federal do Piauí (IFPI). Trabalho com tecnologias como <strong>TypeScript, JavaScript, React.js, Node.js, Express e Prisma</strong>, criando aplicações web com foco em clareza, performance e boa experiência para o usuário.
+            </p>
 
-        function getScrollTopByHref(element) {
-            // pegando o id de cada botão "a"
-            const id = element.getAttribute('href');
-            // retorna a distância do elemento em relação ao topo
-            return document.querySelector(id).offsetTop;
-        }
+            <p>
+              Tenho experiência em projetos institucionais, plataformas educacionais, APIs e interfaces responsivas. Busco construir soluções bem organizadas, fáceis de evoluir e alinhadas às necessidades reais de cada projeto.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        function scrollToIdOnClick(event) {
-            event.preventDefault();
-            // distância do elemento em relação ao topo 
-            const to = getScrollTopByHref(event.target) - 50; // tive que diminuir para nivelar na section
-            scrollToPosition(to);
-        }
+      <section id="experiencias" className="experiences section-shell">
+        <div className="section-heading centered">
+          <span>Experiência</span>
+          <h2>Onde já atuei</h2>
+        </div>
 
-        function scrollToPosition(to) {
-            // window.scroll({
-            //   top: to,
-            //   behavior: "smooth",
-            // });
-            smoothScrollTo(0, to);
-        }
+        <div className="experience-list">
+          {experiencias.map((exp) => (
+            <article className="experience-card" key={exp.id}>
+              <div className="experience-media">
+                {exp.img ? <img src={exp.img} alt={`Logo ${exp.empresa}`} /> : exp.icon}
+              </div>
 
-        /**
-        * Smooth scroll animation
-        * @param {int} endX: destination x coordinate
-        * @param {int} endY: destination y coordinate
-        * @param {int} duration: animation duration in ms
-        */
-        
-        function smoothScrollTo(endX, endY, duration) {
+              <div className="experience-content">
+                <p className="experience-date">{exp.duracao}</p>
+                <h3>{exp.cargo}</h3>
+                <p className="experience-company">{exp.empresa}</p>
+                {exp.local && <p className="experience-location">{exp.local}</p>}
+                <p>{exp.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-            const startX = window.scrollX || window.pageXOffset;
-            const startY = window.scrollY || window.pageYOffset;
-            const distanceX = endX - startX;
-            const distanceY = endY - startY;
-            const startTime = new Date().getTime();
-    
-            duration = typeof duration !== 'undefined' ? duration : 100;
-    
-            // Easing function
-            const easeInOutQuart = (time, from, distance, duration) => {
-                if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
-                return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
-        };
+      <section id="projetos" className="projects section-shell">
+        <div className="section-heading centered">
+          <span>Projetos</span>
+          <h2>Alguns trabalhos desenvolvidos</h2>
+        </div>
 
-        const timer = setInterval(() => {
-            const time = new Date().getTime() - startTime;
-            const newX = easeInOutQuart(time, startX, distanceX, duration);
-            const newY = easeInOutQuart(time, startY, distanceY, duration);
-            if (time >= duration) {
-                clearInterval(timer);
-            }
-            window.scroll(newX, newY);
-        }, 1000 / 30); // 30 fps
-    };
+        <div className="projects-grid">
+          {repositorios.map((repo) => (
+            <article className="project-card" key={repo.nome}>
+              <img src={repo.fundo} alt={`Imagem do projeto ${repo.nome}`} />
 
-    }, []) // executando apenas uma vez
+              <a href={repo.link} target="_blank" rel="noreferrer" className="project-overlay" aria-label={`Acessar projeto ${repo.nome}`}>
+                <h3>{repo.nome}</h3>
+                <p>
+                  {repo.alternativo}
+                  <strong>{repo.tecnologias.join(', ')}.</strong>
+                </p>
+                <span>
+                  Ver projeto <FiExternalLink />
+                </span>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
 
-    return (
-        
-        <main className={`main light`}>
-            <section id="sobre_mim">
-                    {/* texto */}
-                    <div>
-                        <h1 style={{color: "#19e2f1"}}>Valdson Silva</h1>
-                        <h2 style={{color: "#F57D1F"}}>
-                            Desenvolvedor Front-end
-                        </h2>
-                        <div className="texto">
-                            <p style={{color: "#000"}}>
-                            Olá, meu nome é Valdson, sou um desenvolvedor 
-                            Front-end e estou aqui para resolver 
-                            seus problemas.
-                            </p>
-                        </div>
+      <section id="tecnologias" className="technologies section-shell">
+        <div className="section-heading centered">
+          <span>Tecnologias</span>
+          <h2>Stack principal</h2>
+        </div>
 
-                        {/* github - linkedin */}
-                        <nav>
-                            <li>
-                                <a href="https://www.linkedin.com/in/valdson-mac%C3%AAdo-35981426b/">
-                                    <FaLinkedin size={50} aria-label="ícone do linkedin"/>
-                                </a>
-                                <p>Linkedin</p>
-                            </li>
-
-                            <li>
-                                <a href="https://github.com/ValdsonSilva">
-                                    <FaGithub size={50} aria-label="ícone do github"/>
-                                </a>
-                                <p>Github</p>
-                            </li>
-                        </nav>
-                    </div>
-
-                    <div className="container">
-                        <figure>
-                            <img src={foto_pessoal} alt='minha foto' className="foto" style={{borderColor: theme ? "#fff" : "#F57D1F"}}/>
-                        </figure>
-                    </div>
-
-            </section>
-
-            <section id="sobre">
-                <h1 style={{color: theme ? '#000' : '#19e2f1'}}>Sobre mim</h1>
-                
-                <div>
-                    <p style={{color: '#000'}}>
-                        Desenvolvedor apaixonado pelo universo do <span style={{color: "#058ea9"}}>Front-end</span>.
-                        Atualmente estou em formação pela Instituto Federal de Educação Ciência e Tecnologia do Piauí. 
-                        Possuo domínio em <span style={{color: "#058ea9"}}>JavaScript, CSS e HTML</span>, além de experiência com ferramentas como 
-                         <span style={{color: "#058ea9"}}> React.js, Node.js, Express, Prisma e MongoDb</span>.  
-                        Sou um profissional ágil, com experiência em resolução de problemas de forma rápida e com 
-                        facilidade em trabalhar em equipes.
-                    </p>
-                    
-                    <figure className="FotoContainer">
-                        <img className="fotoPessoal" src={foto} alt="Foto pessoal sorrindo" />
-                    </figure>
-                </div>
-            </section>
-
-            <section id="experiencias">
-                <h1>Experiências</h1>
-                {experiencias.map((exp) => (
-                    <div className="caixa_exp">
-                        <figure>
-                            <img src={exp.img} alt="Imagem da empresa onde atuei" />
-                        </figure>
-                        <div>
-                            <p>{exp.duracao}</p>
-                            <h1>{exp.cargo}</h1>
-                            <h3>{exp.desc}</h3>
-                        </div>
-                    </div>
-                ))}
-            </section>
-
-            <section id="projetos">
-                <h1 style={{color: theme ? "#000" : ""}}>Projetos</h1>
-                <div className="carts_projects_father">
-                    {repositorios.map((repo, index) => (
-                        <div className={index % 2 === 0 ? 'row' : 'reverse'} id="cardProject">  
-                            <div>
-                                <figure className="carts_projects_child">
-                                    <img src={repo.fundo}></img>
-                                </figure>
-                            </div>
-                            <a href={repo.link} className="overlay">
-                                <h1 id="projetos_title" style={{fontSize: "2em", color:`var(--secondary-color)`, textAlign:"center"}}>{repo.nome}</h1>
-                                <p>
-                                    {repo.alternativo}
-                                    <span style={{color:"#F57D1F"}}>
-                                        {repo.tecnologias.join(", ")}
-                                    </span>
-                                </p>
-                                <div className="link">
-                                    <FiExternalLink/>
-                                </div>
-                            </a>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            <section id="tecnologias">
-                <h1 style={{color: theme ? "#000" : ""}}>Tecnologias</h1>
-                <div className="carts_father">
-                    {tecnologias.map((tech) => (
-                        <div key={tech.id} className="carts_child">
-                            {tech.image}
-                        </div>
-                    ))}
-                </div>
-            </section>
-    
-        </main>
-    )
+        <div className="tech-grid">
+          {tecnologias.map((tech) => (
+            <article key={tech.stack} className="tech-card" aria-label={tech.stack}>
+              {tech.image}
+              <h3>{tech.stack}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  )
 }
 
-export default Main;
+export default Main

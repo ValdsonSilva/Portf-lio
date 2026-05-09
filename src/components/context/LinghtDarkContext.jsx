@@ -1,10 +1,10 @@
-import {createContext, useState} from "react"
+import { createContext, useState } from "react"
 
 // nosso contexto
 export const ThemeContext = createContext() 
 
 // nosso provider que receberá comps filhos({chlidren})
-export const ThemeProvider = ({children}) => {
+export const ThemeProvider = ({ children }) => { // eslint-disable-line react/prop-types
 
     // estado do nosso tema
     const [theme, setTheme] = useState(false)

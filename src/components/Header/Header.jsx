@@ -1,64 +1,57 @@
-'use client';
-import React, { useState, useContext, useEffect } from 'react'
-import "./Header.style.css"
-import {FaSun, FaMoon} from "react-icons/fa"
-import { ThemeContext } from '../context/LinghtDarkContext'
+import { useEffect, useState } from 'react'
+import './Header.style.css'
 
-// nosso cabeçalho
 function Header() {
-  
-  // trazendo o nosso contexto para esse componente
-  const {theme, handleTheme} = useContext(ThemeContext)
-
   const [toggleState, setToggleState] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  function handleToggle(event) {
-      event.preventDefault()
-      setToggleState(!toggleState)
+  function handleToggle() {
+    setToggleState((currentState) => !currentState)
+  }
+
+  function closeMenu() {
+    setToggleState(false)
   }
 
   useEffect(() => {
     const handleScroll = () => {
-        if (window.scrollY > 0) {
-            setScrolled(true)
-        } else {
-            setScrolled(false)
-        }
+      setScrolled(window.scrollY > 10)
     }
-    window.addEventListener('scroll', handleScroll);
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+
     return () => {
-        window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
   return (
     <header className={`cabecalho ${scrolled ? 'scrolled' : ''}`}>
-        <a href='#sobre_mim' style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-            <p style={{color:"#F57D1F", fontWeight:"900", fontSize:"40px"}}>S</p>ilva
-        </a>
+      <a href="#sobre_mim" className="logo" onClick={closeMenu} aria-label="Voltar para o início">
+        <span>S</span>ilva
+      </a>
 
-        <nav className={`navegacao ${toggleState ? 'open' : ''}`}>
-            <li><a href="#sobre">Sobre mim</a></li>
-            <li><a href="#experiencias">Experiência</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#tecnologias">Tecnologias</a></li>
-            {/* <li><a style={{border:"2px solid #000"}} href='/cv.pdf' download={"/cv.pdf"}>Baixar CV</a></li> */}
-            {/* <button onClick={handleTheme} className={`botao ${toggleState ? 'open' : ''}`}>
-                {theme ? <FaMoon size={25}/> : <FaSun size={25}/>}
-            </button> */}
-        </nav>
+      <nav className={`navegacao ${toggleState ? 'open' : ''}`} aria-label="Navegação principal">
+        <a href="#sobre" onClick={closeMenu}>Sobre mim</a>
+        <a href="#experiencias" onClick={closeMenu}>Experiência</a>
+        <a href="#projetos" onClick={closeMenu}>Projetos</a>
+        <a href="#tecnologias" onClick={closeMenu}>Tecnologias</a>
+      </nav>
 
-        
-
-        <div className={`menu-toggle ${toggleState ? 'open' : ''}`} onClick={handleToggle} >
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-        </div>
-
+      <button
+        type="button"
+        className={`menu-toggle ${toggleState ? 'open' : ''}`}
+        onClick={handleToggle}
+        aria-label={toggleState ? 'Fechar menu' : 'Abrir menu'}
+        aria-expanded={toggleState}
+      >
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
     </header>
   )
 }
 
-export default Header;
+export default Header
