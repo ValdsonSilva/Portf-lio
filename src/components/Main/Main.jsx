@@ -9,7 +9,9 @@ import soticon from '../../assets/soticon.png'
 import soticonImg from '../../assets/expe/soticon.png'
 import cefImg from '../../assets/expe/cef.png'
 import apiImg from '../../assets/api.png'
-import grproImg from "../../assets/expe/grpro.png"
+import hoopi from '../../assets/hoopi.png'
+import sigec from '../../assets/sigec.png'
+import grproImg from '../../assets/expe/grpro.png'
 import {
   FaLinkedin,
   FaGithub,
@@ -17,7 +19,6 @@ import {
   FaCss3,
   FaHtml5,
   FaNodeJs,
-  FaBriefcase,
 } from 'react-icons/fa'
 import { MdJavascript } from 'react-icons/md'
 import {
@@ -32,6 +33,22 @@ import { FiExternalLink } from 'react-icons/fi'
 
 function Main() {
   const repositorios = [
+    {
+      nome: 'Hoopi',
+      link: 'https://www.hoopi.com.br/',
+      alternativo:
+        'Sistema web que facilita o agendamento de viagens curtas, conectando passageiros e condutores de forma rápida, segura e organizada. Atuo como liderança técnica no front-end, contribuindo com ',
+      tecnologias: ['React.js', 'Front-End', 'UX', 'Responsividade'],
+      fundo: hoopi,
+    },
+    {
+      nome: 'Sigec',
+      link: 'http://200.137.175.4:5173/login',
+      alternativo:
+        'Sistema institucional de gerenciamento de chaves do IFPI Campus Floriano, criado para controlar o acesso às chaves da instituição de forma organizada e segura. Atuo como desenvolvedor e líder técnico no front-end, utilizando ',
+      tecnologias: ['React.js', 'TypeScript', 'Tailwind CSS'],
+      fundo: sigec,
+    },
     {
       nome: 'SOTICON',
       link: 'https://front-soticon.vercel.app/',
@@ -253,7 +270,13 @@ function Main() {
             <article className="project-card" key={repo.nome}>
               <img src={repo.fundo} alt={`Imagem do projeto ${repo.nome}`} />
 
-              <a href={repo.link} target="_blank" rel="noreferrer" className="project-overlay" aria-label={`Acessar projeto ${repo.nome}`}>
+              <a
+                href={repo.link}
+                target="_blank"
+                rel="noreferrer"
+                className="project-overlay"
+                aria-label={`Acessar projeto ${repo.nome}`}
+              >
                 <h3>{repo.nome}</h3>
                 <p>
                   {repo.alternativo}
